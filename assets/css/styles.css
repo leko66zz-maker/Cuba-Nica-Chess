@@ -463,3 +463,217 @@ textarea {
 .hidden {
   display: none;
 }
+
+/* ===================================
+   Enhanced Homepage Styles
+   =================================== */
+
+.hero-intro {
+  font-size: 1.3rem;
+  color: var(--gold-color);
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
+}
+
+.hero-supporting {
+  font-size: 1.05rem;
+  color: var(--text-color);
+  max-width: 700px;
+  margin: 1.5rem auto;
+  line-height: 1.8;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.hero-cta .btn {
+  min-width: 200px;
+  font-size: 1.05rem;
+  padding: 1rem 2rem;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(233, 69, 96, 0.3);
+  transition: all 0.3s ease;
+}
+
+.hero-cta .btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(233, 69, 96, 0.4);
+}
+
+.btn-primary {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--hover-color);
+}
+
+.btn-secondary {
+  background-color: var(--gold-color);
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.btn-secondary:hover {
+  background-color: #ffc700;
+  transform: translateY(-3px);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--gold-color);
+  border: 2px solid var(--accent-color);
+  font-weight: 500;
+}
+
+.btn-outline:hover {
+  background-color: var(--secondary-color);
+  border-color: var(--gold-color);
+  color: var(--gold-color);
+}
+
+.mission-section {
+  background: linear-gradient(135deg, rgba(22, 33, 62, 0.8), rgba(26, 26, 46, 0.8));
+  padding: 3rem 2rem;
+  border-radius: 8px;
+  border-left: 4px solid var(--gold-color);
+  margin: 3rem 0;
+}
+
+.mission-text {
+  font-size: 1.1rem;
+  line-height: 1.9;
+  color: var(--text-color);
+  max-width: 900px;
+  margin: 1.5rem auto;
+}
+
+.reasons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.reason-item {
+  background-color: var(--secondary-color);
+  padding: 2rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.reason-item:hover {
+  border-color: var(--accent-color);
+  box-shadow: 0 4px 12px rgba(233, 69, 96, 0.2);
+  transform: translateY(-3px);
+}
+
+.reason-icon {
+  font-size: 1.5rem;
+  color: var(--gold-color);
+  font-weight: bold;
+  min-width: 40px;
+  text-align: center;
+}
+
+.reason-item p {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--text-color);
+}
+
+.closing-section {
+  background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+  padding: 3rem 2rem;
+  border-radius: 8px;
+  text-align: center;
+  margin: 3rem 0;
+  border: 2px solid var(--accent-color);
+}
+
+.closing-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--gold-color);
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
+}
+
+.closing-section p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  line-height: 1.8;
+}
+
+.closing-line {
+  font-size: 1.3rem;
+  color: var(--accent-color);
+  font-weight: 500;
+  margin: 1.5rem 0 2rem 0;
+  font-style: italic;
+}
+
+.closing-cta {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.closing-cta .btn {
+  min-width: 200px;
+  font-size: 1.05rem;
+  padding: 1rem 2rem;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(233, 69, 96, 0.3);
+  transition: all 0.3s ease;
+}
+
+.closing-cta .btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(233, 69, 96, 0.4);
+}
+
+/* ===================================
+   Responsive Enhancements for New Sections
+   =================================== */
+
+@media (max-width: 768px) {
+  .hero-intro {
+    font-size: 1.1rem;
+  }
+
+  .hero-cta,
+  .closing-cta {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .hero-cta .btn,
+  .closing-cta .btn {
+    min-width: 100%;
+  }
+
+  .closing-section h2 {
+    font-size: 1.8rem;
+  }
+
+  .closing-line {
+    font-size: 1.1rem;
+  }
+
+  .reason-item {
+    padding: 1.5rem;
+  }
+}
