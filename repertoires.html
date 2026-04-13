@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Repertorios de ajedrez de Cuba Nica Chess Academy — aperturas estructuradas para blancas y negras." />
+  <title>Repertorios | Cuba Nica Chess Academy</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>♟</text></svg>" />
+</head>
+<body>
+
+  <!-- ========== NAVIGATION ========== -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a href="index.html" class="nav-logo" aria-label="Cuba Nica Chess Academy — Inicio">
+        <span class="nav-logo-icon" aria-hidden="true">♟</span>
+        <span class="nav-logo-text">
+          <span class="nav-logo-name">Cuba Nica Chess</span>
+          <span class="nav-logo-slogan" data-i18n="home.slogan">Disciplina hoy. Fuerza mañana.</span>
+        </span>
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html"         data-i18n="nav.home">Inicio</a></li>
+        <li><a href="articles.html"      data-i18n="nav.articles">Artículos</a></li>
+        <li><a href="repertoires.html"   data-i18n="nav.repertoires">Repertorios</a></li>
+        <li><a href="training.html"      data-i18n="nav.training">Entrenamientos</a></li>
+        <li><a href="about.html"         data-i18n="nav.about">Nosotros</a></li>
+        <li><a href="contact.html"       data-i18n="nav.contact">Contacto</a></li>
+        <li><a href="train-with-ai.html" data-i18n="nav.ai" class="nav-ai">Entrenar con IA</a></li>
+      </ul>
+      <div class="lang-toggle" role="group" aria-label="Language selector">
+        <button data-lang="es" aria-label="Cambiar a español">ES</button>
+        <button data-lang="en" aria-label="Switch to English">EN</button>
+      </div>
+      <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ========== PAGE HERO ========== -->
+  <header class="page-hero" aria-labelledby="page-title">
+    <div class="container">
+      <h1 id="page-title" data-i18n="rep.title">Repertorios</h1>
+      <p data-i18n="rep.sub">Aperturas seleccionadas para construir una base sólida. Próximamente con tablero Lichess interactivo.</p>
+    </div>
+  </header>
+
+  <!-- ========== MAIN ========== -->
+  <main>
+    <section class="section-pad" aria-label="Repertoire content">
+      <div class="container">
+
+        <!-- ===== WHITE REPERTOIRE ===== -->
+        <div class="repertoire-section" aria-labelledby="rep-white-title">
+          <div class="repertoire-header">
+            <span class="piece" aria-hidden="true">♙</span>
+            <div>
+              <h2 id="rep-white-title" data-i18n="rep.white.title">Con Blancas — Sistema 1.e4</h2>
+              <p data-i18n="rep.white.desc">Aperturas agresivas y sólidas para empujar el peón de rey.</p>
+            </div>
+          </div>
+
+          <!-- Italian Game -->
+          <h3 style="color: var(--gold); margin-bottom: 1rem; font-size: 1.1rem;">Giuoco Piano / Italian Game</h3>
+          <div style="overflow-x: auto;">
+            <table class="moves-table" aria-label="Italian Game moves">
+              <thead>
+                <tr>
+                  <th data-i18n="rep.th.move">#</th>
+                  <th data-i18n="rep.th.notation">Notación</th>
+                  <th data-i18n="rep.th.name">Nombre / Variante</th>
+                  <th data-i18n="rep.th.notes">Notas</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td class="move-num">1</td><td class="move">e4</td><td>Apertura de rey</td><td class="note">Control central, libera alfil y dama</td></tr>
+                <tr><td class="move-num"></td><td class="move">e5</td><td>Respuesta simétrica</td><td class="note">Contra-centro clásico</td></tr>
+                <tr><td class="move-num">2</td><td class="move">Cf3</td><td>Desarrollo del caballo</td><td class="note">Ataca e5, principio de desarrollo</td></tr>
+                <tr><td class="move-num"></td><td class="move">Cc6</td><td>Defensa del peón</td><td class="note">Desarrolla y defiende</td></tr>
+                <tr><td class="move-num">3</td><td class="move">Ac4</td><td>Apertura Italiana</td><td class="note">Apunta a f7, enroque corto en vista</td></tr>
+                <tr><td class="move-num"></td><td class="move">Ac5</td><td>Giuoco Piano</td><td class="note">"Juego tranquilo" — sólido y activo</td></tr>
+                <tr><td class="move-num">4</td><td class="move">c3</td><td>Preparar d4</td><td class="note">Construcción de centro sólido</td></tr>
+                <tr><td class="move-num"></td><td class="move">Cf6</td><td>Ataque al peón e4</td><td class="note">Contrajuego activo de negras</td></tr>
+                <tr><td class="move-num">5</td><td class="move">d4</td><td>Ruptura central</td><td class="note">⭐ Jugada crítica — batalla por el centro</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div style="margin-top: 2rem;">
+            <h3 style="color: var(--gold); margin-bottom: 1rem; font-size: 1.1rem;">Defensa Española / Ruy López</h3>
+            <div style="overflow-x: auto;">
+              <table class="moves-table" aria-label="Ruy Lopez moves">
+                <thead>
+                  <tr>
+                    <th data-i18n="rep.th.move">#</th>
+                    <th data-i18n="rep.th.notation">Notación</th>
+                    <th data-i18n="rep.th.name">Nombre / Variante</th>
+                    <th data-i18n="rep.th.notes">Notas</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td class="move-num">1</td><td class="move">e4 e5</td><td>Apertura de rey</td><td class="note">Inicio estándar</td></tr>
+                  <tr><td class="move-num">2</td><td class="move">Cf3 Cc6</td><td>Desarrollo</td><td class="note">Ambos desarrollan</td></tr>
+                  <tr><td class="move-num">3</td><td class="move">Ab5</td><td>Ruy López</td><td class="note">Apertura más rica y profunda del ajedrez</td></tr>
+                  <tr><td class="move-num"></td><td class="move">a6</td><td>Variante Morphy</td><td class="note">La respuesta más común y sólida</td></tr>
+                  <tr><td class="move-num">4</td><td class="move">Aa4</td><td>Retirada del alfil</td><td class="note">Mantiene la presión sobre c6</td></tr>
+                  <tr><td class="move-num"></td><td class="move">Cf6</td><td>Ataque al peón</td><td class="note">Contrajuego inmediato</td></tr>
+                  <tr><td class="move-num">5</td><td class="move">0-0</td><td>Enroque corto</td><td class="note">Seguridad del rey, activar torre</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- LICHESS PLACEHOLDER (Phase 2) -->
+          <!--
+            FUTURE LICHESS INTEGRATION (Phase 2):
+            Replace the placeholder below with an embedded Lichess board.
+            Options:
+            1. Use lichess-pgn-viewer: https://github.com/lichess-org/pgn-viewer
+            2. Use Lichess study embed: https://lichess.org/study
+            3. Use Lichess API: https://lichess.org/api
+          -->
+          <div class="lichess-placeholder" id="lichess-board-white" aria-label="Lichess board placeholder">
+            <div class="ph-icon" aria-hidden="true">♟</div>
+            <h3 data-i18n="rep.ph.title">Tablero Interactivo — Próximamente</h3>
+            <p data-i18n="rep.ph.desc">Aquí se integrará un tablero Lichess para explorar las variantes de forma interactiva.</p>
+          </div>
+        </div>
+
+        <hr class="divider" />
+
+        <!-- ===== BLACK REPERTOIRE ===== -->
+        <div class="repertoire-section" aria-labelledby="rep-black-title">
+          <div class="repertoire-header">
+            <span class="piece" aria-hidden="true">♟</span>
+            <div>
+              <h2 id="rep-black-title" data-i18n="rep.black.title">Con Negras — Respuestas Sólidas</h2>
+              <p data-i18n="rep.black.desc">Sistemas defensivos que conducen a posiciones activas.</p>
+            </div>
+          </div>
+
+          <h3 style="color: var(--gold); margin-bottom: 1rem; font-size: 1.1rem;">Defensa Siciliana — Variante Najdorf</h3>
+          <div style="overflow-x: auto;">
+            <table class="moves-table" aria-label="Sicilian Najdorf moves">
+              <thead>
+                <tr>
+                  <th data-i18n="rep.th.move">#</th>
+                  <th data-i18n="rep.th.notation">Notación</th>
+                  <th data-i18n="rep.th.name">Nombre / Variante</th>
+                  <th data-i18n="rep.th.notes">Notas</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td class="move-num">1</td><td class="move">e4</td><td>Apertura de rey</td><td class="note">Blancas controlan el centro</td></tr>
+                <tr><td class="move-num"></td><td class="move">c5</td><td>Defensa Siciliana</td><td class="note">Asimetría — juego vivo para negras</td></tr>
+                <tr><td class="move-num">2</td><td class="move">Cf3</td><td>Desarrollo</td><td class="note">Prepara d4</td></tr>
+                <tr><td class="move-num"></td><td class="move">d6</td><td>Control e5</td><td class="note">Prepara Cf6 y e5</td></tr>
+                <tr><td class="move-num">3</td><td class="move">d4</td><td>Ruptura central</td><td class="note">Blancas abren el juego</td></tr>
+                <tr><td class="move-num"></td><td class="move">cxd4</td><td>Captura</td><td class="note">Negras ganan espacio en el centro</td></tr>
+                <tr><td class="move-num">4</td><td class="move">Cxd4</td><td>Recaptura</td><td class="note">Caballo activo en d4</td></tr>
+                <tr><td class="move-num"></td><td class="move">Cf6</td><td>Desarrollo</td><td class="note">Ataca e4</td></tr>
+                <tr><td class="move-num">5</td><td class="move">Cc3</td><td>Desarrollo</td><td class="note">Defiende e4</td></tr>
+                <tr><td class="move-num"></td><td class="move">a6</td><td>⭐ Najdorf</td><td class="note">La variante más compleja del ajedrez</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div style="margin-top: 2rem;">
+            <h3 style="color: var(--gold); margin-bottom: 1rem; font-size: 1.1rem;">Defensa Francesa — Variante Tarrasch</h3>
+            <div style="overflow-x: auto;">
+              <table class="moves-table" aria-label="French Defense moves">
+                <thead>
+                  <tr>
+                    <th data-i18n="rep.th.move">#</th>
+                    <th data-i18n="rep.th.notation">Notación</th>
+                    <th data-i18n="rep.th.name">Nombre / Variante</th>
+                    <th data-i18n="rep.th.notes">Notas</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td class="move-num">1</td><td class="move">e4 e6</td><td>Defensa Francesa</td><td class="note">Sólida, excelente para principiantes</td></tr>
+                  <tr><td class="move-num">2</td><td class="move">d4 d5</td><td>Contra-centro</td><td class="note">Negras atacan el centro inmediatamente</td></tr>
+                  <tr><td class="move-num">3</td><td class="move">Cd2</td><td>Variante Tarrasch</td><td class="note">Evita la clavada Ag4</td></tr>
+                  <tr><td class="move-num"></td><td class="move">Cf6</td><td>Desarrollo activo</td><td class="note">Ataca e4</td></tr>
+                  <tr><td class="move-num">4</td><td class="move">e5</td><td>Cierre del centro</td><td class="note">Blancas ganan espacio</td></tr>
+                  <tr><td class="move-num"></td><td class="move">Cfd7</td><td>Retirada estratégica</td><td class="note">El caballo volverá por c5 o b6</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- LICHESS PLACEHOLDER (Phase 2) -->
+          <div class="lichess-placeholder" id="lichess-board-black" aria-label="Lichess board placeholder for black repertoire">
+            <div class="ph-icon" aria-hidden="true">♟</div>
+            <h3 data-i18n="rep.ph.title">Tablero Interactivo — Próximamente</h3>
+            <p data-i18n="rep.ph.desc">Aquí se integrará un tablero Lichess para explorar las variantes de forma interactiva.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo" aria-label="Cuba Nica Chess Academy">
+            <span class="nav-logo-icon" aria-hidden="true">♟</span>
+            <span class="nav-logo-text">
+              <span class="nav-logo-name">Cuba Nica Chess</span>
+              <span class="nav-logo-slogan" data-i18n="home.slogan">Disciplina hoy. Fuerza mañana.</span>
+            </span>
+          </a>
+          <p data-i18n="ft.desc">Academia virtual de ajedrez con metodología sólida, repertorios y ejercicios para todos los niveles.</p>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="ft.nav">Navegación</h4>
+          <ul role="list">
+            <li><a href="index.html"       data-i18n="nav.home">Inicio</a></li>
+            <li><a href="articles.html"    data-i18n="nav.articles">Artículos</a></li>
+            <li><a href="repertoires.html" data-i18n="nav.repertoires">Repertorios</a></li>
+            <li><a href="training.html"    data-i18n="nav.training">Entrenamientos</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="ft.resources">Recursos</h4>
+          <ul role="list">
+            <li><a href="about.html"         data-i18n="nav.about">Nosotros</a></li>
+            <li><a href="contact.html"       data-i18n="nav.contact">Contacto</a></li>
+            <li><a href="train-with-ai.html" data-i18n="nav.ai">Entrenar con IA</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="ft.follow">Síguenos</h4>
+          <ul role="list">
+            <li><a href="https://lichess.org" target="_blank" rel="noopener noreferrer">Lichess</a></li>
+            <li><a href="contact.html">YouTube</a></li>
+            <li><a href="contact.html">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span data-i18n="ft.copy">© 2024 Cuba Nica Chess Academy. Todos los derechos reservados.</span>
+        <span class="tag" data-i18n="ft.phase">Fase 1 — En desarrollo</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

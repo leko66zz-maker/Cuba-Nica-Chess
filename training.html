@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Entrenamientos de ajedrez — ejercicios tácticos, estratégicos y de finales de Cuba Nica Chess Academy." />
+  <title>Entrenamientos | Cuba Nica Chess Academy</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>♟</text></svg>" />
+</head>
+<body>
+
+  <!-- ========== NAVIGATION ========== -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a href="index.html" class="nav-logo" aria-label="Cuba Nica Chess Academy — Inicio">
+        <span class="nav-logo-icon" aria-hidden="true">♟</span>
+        <span class="nav-logo-text">
+          <span class="nav-logo-name">Cuba Nica Chess</span>
+          <span class="nav-logo-slogan" data-i18n="home.slogan">Disciplina hoy. Fuerza mañana.</span>
+        </span>
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html"         data-i18n="nav.home">Inicio</a></li>
+        <li><a href="articles.html"      data-i18n="nav.articles">Artículos</a></li>
+        <li><a href="repertoires.html"   data-i18n="nav.repertoires">Repertorios</a></li>
+        <li><a href="training.html"      data-i18n="nav.training">Entrenamientos</a></li>
+        <li><a href="about.html"         data-i18n="nav.about">Nosotros</a></li>
+        <li><a href="contact.html"       data-i18n="nav.contact">Contacto</a></li>
+        <li><a href="train-with-ai.html" data-i18n="nav.ai" class="nav-ai">Entrenar con IA</a></li>
+      </ul>
+      <div class="lang-toggle" role="group" aria-label="Language selector">
+        <button data-lang="es" aria-label="Cambiar a español">ES</button>
+        <button data-lang="en" aria-label="Switch to English">EN</button>
+      </div>
+      <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ========== PAGE HERO ========== -->
+  <header class="page-hero" aria-labelledby="page-title">
+    <div class="container">
+      <h1 id="page-title" data-i18n="tr.title">Entrenamientos</h1>
+      <p data-i18n="tr.sub">Ejercicios tácticos, estratégicos y de finales para todos los niveles.</p>
+    </div>
+  </header>
+
+  <!-- ========== MAIN ========== -->
+  <main>
+    <section class="section-pad" aria-label="Exercise cards">
+      <div class="container">
+
+        <div class="cards-grid">
+
+          <!-- Exercise 1: Mate in 2 -->
+          <article class="exercise-card">
+            <div class="exercise-board" aria-label="Chess exercise diagram">
+              <!-- Simplified 4x4 CSS board visualization -->
+              <div class="board-grid" aria-hidden="true">
+                <div class="board-cell dark piece" data-piece="♜"></div>
+                <div class="board-cell light"></div>
+                <div class="board-cell dark"></div>
+                <div class="board-cell light piece" data-piece="♚"></div>
+                <div class="board-cell light piece" data-piece="♙"></div>
+                <div class="board-cell dark"></div>
+                <div class="board-cell light piece" data-piece="♖"></div>
+                <div class="board-cell dark"></div>
+                <div class="board-cell dark"></div>
+                <div class="board-cell light"></div>
+                <div class="board-cell dark piece" data-piece="♔"></div>
+                <div class="board-cell light"></div>
+                <div class="board-cell light"></div>
+                <div class="board-cell dark"></div>
+                <div class="board-cell light"></div>
+                <div class="board-cell dark"></div>
+              </div>
+              <div class="exercise-level">
+                <span class="tag" data-i18n="tr.level.beg">Principiante</span>
+              </div>
+            </div>
+            <div class="exercise-body">
+              <h3 data-i18n="tr.e1.title">Jaque mate en 2</h3>
+              <p data-i18n="tr.e1.desc">Las blancas juegan y dan jaque mate en 2 movimientos. Busca el sacrificio.</p>
+              <div class="exercise-meta">
+                <span>⚡ 2 <span data-i18n="tr.moves">movs.</span></span>
+                <span>⏱ 3 <span data-i18n="tr.min">min</span></span>
+                <span>♙ 1600 ELO</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Exercise 2: Knight Fork -->
+          <article class="exercise-card">
+            <div class="exercise-board" aria-label="Chess exercise diagram">
+              <div class="board-grid" aria-hidden="true">
+                <div class="board-cell dark piece" data-piece="♚"></div>
+                <div class="board-cell light"></div>
+                <div class="board-cell dark"></div>
+                <div class="board-cell light piece" data-piece="♛"></div>
+                <div class="board-cell light"></div>
+                <div class="board-cell dark"></div>
+                <div class="board-cell light"></div>
+                <div class="board-cell dark"></div>
+                <div class="board-cell dark"></div>
+                <div class="board-cell light piece" data-piece="♘"></div>
+                <div class="board-cell dark"></div>
+                <div class="board-cell light"></div>
+                <div class="board-cell light"></div>
+                <div class="board-cell dark"></div>
+                <div class="board-cell light piece" data-piece="♔"></div>
+                <div class="board-cell dark"></div>
+              </div>
+              <div class="exercise-level">
+                <span class="tag" data-i18n="tr.level.beg">Principiante</span>
+              </div>
+            </div>
+            <div class="exercise-body">
+              <h3 data-i18n="tr.e2.title">Bifurcación de caballo</h3>
+              <p data-i18n="tr.e2.desc">El caballo puede atacar al rey y la dama simultáneamente. ¿Cuál es la jugada?</p>
+              <div class="exercise-meta">
+                <span>⚡ 1 <span data-i18n="tr.moves">movs.</span></span>
+                <span>⏱ 2 <span data-i18n="tr.min">min</span></span>
+                <span>♙ 1400 ELO</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Exercise 3: King endgame -->
+          <article class="exercise-card">
+            <div class="exercise-board" aria-label="Chess exercise diagram">
+              <div class="board-grid" aria-hidden="true">
+                <div class="board-cell dark piece" data-piece="♚"></div>
+                <div class="board-cell light"></div>
+                <div class="board-cell dark"></div>
+                <div class="board-cell light"></div>
+                <div class="board-cell light"></div>
+                <div class="board-cell dark"></div>
+                <div class="board-cell light piece" data-piece="♙"></div>
+                <div class="board-cell dark"></div>
+                <div class="board-cell dark"></div>
+                <div class="board-cell light"></div>
+                <div class="board-cell dark"></div>
+                <div class="board-cell light"></div>
+                <div class="board-cell light piece" data-piece="♔"></div>
+                <div class="board-cell dark"></div>
+                <div class="board-cell light"></div>
+                <div class="board-cell dark"></div>
+              </div>
+              <div class="exercise-level">
+                <span class="tag" data-i18n="tr.level.int">Intermedio</span>
+              </div>
+            </div>
+            <div class="exercise-body">
+              <h3 data-i18n="tr.e3.title">Activar el rey en el final</h3>
+              <p data-i18n="tr.e3.desc">En este final de peones, el rey debe avanzar a tiempo. Encuentra el camino correcto.</p>
+              <div class="exercise-meta">
+                <span>⚡ 5 <span data-i18n="tr.moves">movs.</span></span>
+                <span>⏱ 5 <span data-i18n="tr.min">min</span></span>
+                <span>♙ 1800 ELO</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Exercise 4: Pin -->
+          <article class="exercise-card">
+            <div class="exercise-board" aria-label="Chess exercise diagram">
+              <div class="board-grid" aria-hidden="true">
+                <div class="board-cell dark piece" data-piece="♚"></div>
+                <div class="board-cell light piece" data-piece="♞"></div>
+                <div class="board-cell dark"></div>
+                <div class="board-cell light"></div>
+                <div class="board-cell light"></div>
+                <div class="board-cell dark"></div>
+                <div class="board-cell light"></div>
+                <div class="board-cell dark"></div>
+                <div class="board-cell dark"></div>
+                <div class="board-cell light piece" data-piece="♗"></div>
+                <div class="board-cell dark"></div>
+                <div class="board-cell light"></div>
+                <div class="board-cell light"></div>
+                <div class="board-cell dark"></div>
+                <div class="board-cell light piece" data-piece="♔"></div>
+                <div class="board-cell dark"></div>
+              </div>
+              <div class="exercise-level">
+                <span class="tag" data-i18n="tr.level.int">Intermedio</span>
+              </div>
+            </div>
+            <div class="exercise-body">
+              <h3 data-i18n="tr.e4.title">La clavada decisiva</h3>
+              <p data-i18n="tr.e4.desc">Usa el alfil para clavar el caballo al rey. Un ejercicio clásico de táctica.</p>
+              <div class="exercise-meta">
+                <span>⚡ 1 <span data-i18n="tr.moves">movs.</span></span>
+                <span>⏱ 2 <span data-i18n="tr.min">min</span></span>
+                <span>♙ 1700 ELO</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Exercise 5: Passed pawn -->
+          <article class="exercise-card">
+            <div class="exercise-board" aria-label="Chess exercise diagram">
+              <div class="board-grid" aria-hidden="true">
+                <div class="board-cell dark piece" data-piece="♚"></div>
+                <div class="board-cell light"></div>
+                <div class="board-cell dark"></div>
+                <div class="board-cell light"></div>
+                <div class="board-cell light piece" data-piece="♙"></div>
+                <div class="board-cell dark"></div>
+                <div class="board-cell light"></div>
+                <div class="board-cell dark"></div>
+                <div class="board-cell dark"></div>
+                <div class="board-cell light"></div>
+                <div class="board-cell dark piece" data-piece="♜"></div>
+                <div class="board-cell light"></div>
+                <div class="board-cell light"></div>
+                <div class="board-cell dark"></div>
+                <div class="board-cell light piece" data-piece="♖"></div>
+                <div class="board-cell dark piece" data-piece="♔"></div>
+              </div>
+              <div class="exercise-level">
+                <span class="tag" data-i18n="tr.level.adv">Avanzado</span>
+              </div>
+            </div>
+            <div class="exercise-body">
+              <h3 data-i18n="tr.e5.title">Peón pasado en la séptima</h3>
+              <p data-i18n="tr.e5.desc">Promueve el peón a dama con la técnica correcta. Timing es todo.</p>
+              <div class="exercise-meta">
+                <span>⚡ 4 <span data-i18n="tr.moves">movs.</span></span>
+                <span>⏱ 8 <span data-i18n="tr.min">min</span></span>
+                <span>♙ 2000 ELO</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Exercise 6: Zugzwang -->
+          <article class="exercise-card">
+            <div class="exercise-board" aria-label="Chess exercise diagram">
+              <div class="board-grid" aria-hidden="true">
+                <div class="board-cell dark"></div>
+                <div class="board-cell light piece" data-piece="♚"></div>
+                <div class="board-cell dark"></div>
+                <div class="board-cell light"></div>
+                <div class="board-cell light piece" data-piece="♙"></div>
+                <div class="board-cell dark piece" data-piece="♙"></div>
+                <div class="board-cell light"></div>
+                <div class="board-cell dark"></div>
+                <div class="board-cell dark"></div>
+                <div class="board-cell light"></div>
+                <div class="board-cell dark piece" data-piece="♔"></div>
+                <div class="board-cell light"></div>
+                <div class="board-cell light"></div>
+                <div class="board-cell dark"></div>
+                <div class="board-cell light"></div>
+                <div class="board-cell dark"></div>
+              </div>
+              <div class="exercise-level">
+                <span class="tag" data-i18n="tr.level.adv">Avanzado</span>
+              </div>
+            </div>
+            <div class="exercise-body">
+              <h3 data-i18n="tr.e6.title">Posición de zugzwang</h3>
+              <p data-i18n="tr.e6.desc">Cualquier jugada del adversario empeora su posición. ¿Cómo llegar al zugzwang?</p>
+              <div class="exercise-meta">
+                <span>⚡ 3 <span data-i18n="tr.moves">movs.</span></span>
+                <span>⏱ 10 <span data-i18n="tr.min">min</span></span>
+                <span>♙ 2100 ELO</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <hr class="divider" />
+
+        <!--
+          FUTURE LICHESS INTEGRATION (Phase 2):
+          Replace placeholder below with Lichess puzzle embed or pgn-viewer.
+          - Lichess API puzzles endpoint: https://lichess.org/api/puzzle/daily
+          - Lichess study embed: https://lichess.org/study/embed
+        -->
+        <div class="lichess-placeholder" id="lichess-exercise-board" aria-label="Interactive exercise board placeholder">
+          <div class="ph-icon" aria-hidden="true">🎯</div>
+          <h3 data-i18n="rep.ph.title">Tablero Interactivo — Próximamente</h3>
+          <p data-i18n="rep.ph.desc">Aquí se integrará un tablero Lichess para resolver los ejercicios de forma interactiva.</p>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo" aria-label="Cuba Nica Chess Academy">
+            <span class="nav-logo-icon" aria-hidden="true">♟</span>
+            <span class="nav-logo-text">
+              <span class="nav-logo-name">Cuba Nica Chess</span>
+              <span class="nav-logo-slogan" data-i18n="home.slogan">Disciplina hoy. Fuerza mañana.</span>
+            </span>
+          </a>
+          <p data-i18n="ft.desc">Academia virtual de ajedrez con metodología sólida, repertorios y ejercicios para todos los niveles.</p>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="ft.nav">Navegación</h4>
+          <ul role="list">
+            <li><a href="index.html"       data-i18n="nav.home">Inicio</a></li>
+            <li><a href="articles.html"    data-i18n="nav.articles">Artículos</a></li>
+            <li><a href="repertoires.html" data-i18n="nav.repertoires">Repertorios</a></li>
+            <li><a href="training.html"    data-i18n="nav.training">Entrenamientos</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="ft.resources">Recursos</h4>
+          <ul role="list">
+            <li><a href="about.html"         data-i18n="nav.about">Nosotros</a></li>
+            <li><a href="contact.html"       data-i18n="nav.contact">Contacto</a></li>
+            <li><a href="train-with-ai.html" data-i18n="nav.ai">Entrenar con IA</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="ft.follow">Síguenos</h4>
+          <ul role="list">
+            <li><a href="https://lichess.org" target="_blank" rel="noopener noreferrer">Lichess</a></li>
+            <li><a href="contact.html">YouTube</a></li>
+            <li><a href="contact.html">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span data-i18n="ft.copy">© 2024 Cuba Nica Chess Academy. Todos los derechos reservados.</span>
+        <span class="tag" data-i18n="ft.phase">Fase 1 — En desarrollo</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

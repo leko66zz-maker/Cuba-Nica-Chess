@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contacto y redes sociales de Cuba Nica Chess Academy." />
+  <title>Contacto | Cuba Nica Chess Academy</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>♟</text></svg>" />
+</head>
+<body>
+
+  <!-- ========== NAVIGATION ========== -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a href="index.html" class="nav-logo" aria-label="Cuba Nica Chess Academy — Inicio">
+        <span class="nav-logo-icon" aria-hidden="true">♟</span>
+        <span class="nav-logo-text">
+          <span class="nav-logo-name">Cuba Nica Chess</span>
+          <span class="nav-logo-slogan" data-i18n="home.slogan">Disciplina hoy. Fuerza mañana.</span>
+        </span>
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html"         data-i18n="nav.home">Inicio</a></li>
+        <li><a href="articles.html"      data-i18n="nav.articles">Artículos</a></li>
+        <li><a href="repertoires.html"   data-i18n="nav.repertoires">Repertorios</a></li>
+        <li><a href="training.html"      data-i18n="nav.training">Entrenamientos</a></li>
+        <li><a href="about.html"         data-i18n="nav.about">Nosotros</a></li>
+        <li><a href="contact.html"       data-i18n="nav.contact">Contacto</a></li>
+        <li><a href="train-with-ai.html" data-i18n="nav.ai" class="nav-ai">Entrenar con IA</a></li>
+      </ul>
+      <div class="lang-toggle" role="group" aria-label="Language selector">
+        <button data-lang="es" aria-label="Cambiar a español">ES</button>
+        <button data-lang="en" aria-label="Switch to English">EN</button>
+      </div>
+      <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ========== PAGE HERO ========== -->
+  <header class="page-hero" aria-labelledby="page-title">
+    <div class="container">
+      <h1 id="page-title" data-i18n="ct.title">Contacto</h1>
+      <p data-i18n="ct.sub">Conéctate con la academia. Estamos en varias plataformas.</p>
+    </div>
+  </header>
+
+  <!-- ========== MAIN ========== -->
+  <main>
+    <section class="section-pad" aria-label="Contact content">
+      <div class="container">
+        <div class="contact-grid">
+
+          <!-- SOCIAL LINKS -->
+          <div>
+            <h2 class="section-title" style="margin-bottom: 1.5rem;" data-i18n="ft.follow">Síguenos</h2>
+            <div class="social-links" role="list">
+
+              <a href="https://lichess.org" target="_blank" rel="noopener noreferrer" class="social-link" role="listitem" aria-label="Lichess — @CubaNicaChess">
+                <span class="sl-icon" aria-hidden="true">♟</span>
+                <div class="sl-info">
+                  <div class="sl-name">Lichess</div>
+                  <div class="sl-handle">@CubaNicaChess</div>
+                </div>
+              </a>
+
+              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-link" role="listitem" aria-label="YouTube — Cuba Nica Chess Academy">
+                <span class="sl-icon" aria-hidden="true">▶️</span>
+                <div class="sl-info">
+                  <div class="sl-name">YouTube</div>
+                  <div class="sl-handle">Cuba Nica Chess Academy</div>
+                </div>
+              </a>
+
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-link" role="listitem" aria-label="Instagram — @cubanicachess">
+                <span class="sl-icon" aria-hidden="true">📸</span>
+                <div class="sl-info">
+                  <div class="sl-name">Instagram</div>
+                  <div class="sl-handle">@cubanicachess</div>
+                </div>
+              </a>
+
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-link" role="listitem" aria-label="Facebook — Cuba Nica Chess Academy">
+                <span class="sl-icon" aria-hidden="true">📘</span>
+                <div class="sl-info">
+                  <div class="sl-name">Facebook</div>
+                  <div class="sl-handle">Cuba Nica Chess Academy</div>
+                </div>
+              </a>
+
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-link" role="listitem" aria-label="X (Twitter) — @CubaNicaChess">
+                <span class="sl-icon" aria-hidden="true">𝕏</span>
+                <div class="sl-info">
+                  <div class="sl-name">X (Twitter)</div>
+                  <div class="sl-handle">@CubaNicaChess</div>
+                </div>
+              </a>
+
+              <a href="https://chess.com" target="_blank" rel="noopener noreferrer" class="social-link" role="listitem" aria-label="Chess.com — CubaNicaChess">
+                <span class="sl-icon" aria-hidden="true">♔</span>
+                <div class="sl-info">
+                  <div class="sl-name">Chess.com</div>
+                  <div class="sl-handle">CubaNicaChess</div>
+                </div>
+              </a>
+
+            </div>
+          </div>
+
+          <!-- CONTACT FORM -->
+          <div class="contact-form">
+            <h2 data-i18n="ct.form.title">Envíanos un mensaje</h2>
+
+            <!--
+              FUTURE BACKEND INTEGRATION (Phase 2):
+              Connect this form to Formspree, Netlify Forms, or a custom backend.
+              Replace action="#" with actual form endpoint.
+              Example: action="https://formspree.io/f/YOUR_FORM_ID"
+            -->
+            <form id="contact-form" action="#" method="POST" novalidate aria-label="Contact form">
+              <div class="form-group">
+                <label for="form-name" data-i18n="ct.form.name">Nombre completo</label>
+                <input type="text" id="form-name" name="name" autocomplete="name" required
+                       placeholder="María García" />
+              </div>
+              <div class="form-group">
+                <label for="form-email" data-i18n="ct.form.email">Correo electrónico</label>
+                <input type="email" id="form-email" name="email" autocomplete="email" required
+                       placeholder="maria@ejemplo.com" />
+              </div>
+              <div class="form-group">
+                <label for="form-subject" data-i18n="ct.form.subject">Asunto</label>
+                <select id="form-subject" name="subject">
+                  <option value="general">Consulta general / General inquiry</option>
+                  <option value="repertoire">Repertorios / Repertoires</option>
+                  <option value="training">Entrenamientos / Training</option>
+                  <option value="collaboration">Colaboración / Collaboration</option>
+                  <option value="other">Otro / Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="form-message" data-i18n="ct.form.message">Mensaje</label>
+                <textarea id="form-message" name="message" rows="5" required
+                          placeholder="Escribe tu mensaje aquí..."></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary" style="width: 100%;"
+                      data-i18n="ct.form.btn">Enviar mensaje</button>
+              <p class="form-notice" data-i18n="ct.form.notice">Este formulario es un prototipo. La funcionalidad de envío se añadirá en la Fase 2.</p>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo" aria-label="Cuba Nica Chess Academy">
+            <span class="nav-logo-icon" aria-hidden="true">♟</span>
+            <span class="nav-logo-text">
+              <span class="nav-logo-name">Cuba Nica Chess</span>
+              <span class="nav-logo-slogan" data-i18n="home.slogan">Disciplina hoy. Fuerza mañana.</span>
+            </span>
+          </a>
+          <p data-i18n="ft.desc">Academia virtual de ajedrez con metodología sólida, repertorios y ejercicios para todos los niveles.</p>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="ft.nav">Navegación</h4>
+          <ul role="list">
+            <li><a href="index.html"       data-i18n="nav.home">Inicio</a></li>
+            <li><a href="articles.html"    data-i18n="nav.articles">Artículos</a></li>
+            <li><a href="repertoires.html" data-i18n="nav.repertoires">Repertorios</a></li>
+            <li><a href="training.html"    data-i18n="nav.training">Entrenamientos</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="ft.resources">Recursos</h4>
+          <ul role="list">
+            <li><a href="about.html"         data-i18n="nav.about">Nosotros</a></li>
+            <li><a href="contact.html"       data-i18n="nav.contact">Contacto</a></li>
+            <li><a href="train-with-ai.html" data-i18n="nav.ai">Entrenar con IA</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="ft.follow">Síguenos</h4>
+          <ul role="list">
+            <li><a href="https://lichess.org" target="_blank" rel="noopener noreferrer">Lichess</a></li>
+            <li><a href="contact.html">YouTube</a></li>
+            <li><a href="contact.html">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span data-i18n="ft.copy">© 2024 Cuba Nica Chess Academy. Todos los derechos reservados.</span>
+        <span class="tag" data-i18n="ft.phase">Fase 1 — En desarrollo</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

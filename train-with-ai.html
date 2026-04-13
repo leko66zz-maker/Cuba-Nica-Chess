@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Entrena con Inteligencia Artificial — próximamente en Cuba Nica Chess Academy." />
+  <title>Entrenar con IA | Cuba Nica Chess Academy</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>♟</text></svg>" />
+</head>
+<body>
+
+  <!-- ========== NAVIGATION ========== -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a href="index.html" class="nav-logo" aria-label="Cuba Nica Chess Academy — Inicio">
+        <span class="nav-logo-icon" aria-hidden="true">♟</span>
+        <span class="nav-logo-text">
+          <span class="nav-logo-name">Cuba Nica Chess</span>
+          <span class="nav-logo-slogan" data-i18n="home.slogan">Disciplina hoy. Fuerza mañana.</span>
+        </span>
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html"         data-i18n="nav.home">Inicio</a></li>
+        <li><a href="articles.html"      data-i18n="nav.articles">Artículos</a></li>
+        <li><a href="repertoires.html"   data-i18n="nav.repertoires">Repertorios</a></li>
+        <li><a href="training.html"      data-i18n="nav.training">Entrenamientos</a></li>
+        <li><a href="about.html"         data-i18n="nav.about">Nosotros</a></li>
+        <li><a href="contact.html"       data-i18n="nav.contact">Contacto</a></li>
+        <li><a href="train-with-ai.html" data-i18n="nav.ai" class="nav-ai">Entrenar con IA</a></li>
+      </ul>
+      <div class="lang-toggle" role="group" aria-label="Language selector">
+        <button data-lang="es" aria-label="Cambiar a español">ES</button>
+        <button data-lang="en" aria-label="Switch to English">EN</button>
+      </div>
+      <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ========== MAIN ========== -->
+  <main>
+
+    <!-- AI HERO -->
+    <section class="ai-hero" aria-labelledby="ai-title">
+      <div class="container">
+        <div class="ai-badge" aria-label="Coming soon badge">
+          <span aria-hidden="true">🤖</span>
+          <span data-i18n="ai.badge">Próximamente</span>
+        </div>
+        <h1 id="ai-title" data-i18n="ai.title">Entrena con Inteligencia Artificial</h1>
+        <p data-i18n="ai.desc">Una experiencia de entrenamiento personalizada con IA estará disponible muy pronto. Análisis en tiempo real, sugerencias adaptativas y mucho más.</p>
+        <a href="training.html" class="btn btn-outline" data-i18n="ai.cs.btn">Ver Entrenamientos</a>
+      </div>
+    </section>
+
+    <section class="section-pad-sm" aria-label="AI feature placeholder">
+      <div class="container">
+
+        <!--
+          FUTURE AI INTEGRATION (Phase 3/4):
+          This section will contain:
+          - Phase 3: Lichess board + Stockfish WASM engine for game analysis
+          - Phase 4: LLM-powered conversational chess tutor
+          Relevant resources:
+          - Stockfish WASM: https://github.com/lichess-org/stockfish.wasm
+          - Lichess API: https://lichess.org/api
+          - OpenAI API: https://platform.openai.com
+        -->
+        <div class="coming-soon-box" aria-labelledby="cs-title">
+          <div class="cs-icon" aria-hidden="true">🧠</div>
+          <h2 id="cs-title" data-i18n="ai.cs.title">Esta función está en desarrollo</h2>
+          <p data-i18n="ai.cs.desc">Estamos construyendo una plataforma de entrenamiento impulsada por IA. Mientras tanto, explora nuestros repertorios y ejercicios manuales.</p>
+          <a href="training.html" class="btn btn-primary" data-i18n="ai.cs.btn">Ver Entrenamientos</a>
+        </div>
+
+        <!-- ROADMAP TIMELINE -->
+        <div class="feature-timeline" aria-labelledby="tl-title">
+          <h2 class="section-title text-center" id="tl-title" style="margin-bottom: 2rem;" data-i18n="ai.tl.title">Hoja de ruta</h2>
+
+          <div class="timeline-item">
+            <div class="timeline-dot done" aria-hidden="true">✓</div>
+            <div class="timeline-content">
+              <h4 data-i18n="ai.tl.p1.title">Fase 1 — Sitio base ✓</h4>
+              <p data-i18n="ai.tl.p1.desc">Estructura del sitio, repertorios, artículos y ejercicios.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot next" aria-hidden="true">♟</div>
+            <div class="timeline-content">
+              <h4 data-i18n="ai.tl.p2.title">Fase 2 — Tablero Lichess</h4>
+              <p data-i18n="ai.tl.p2.desc">Integración de tablero interactivo via Lichess API.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot" aria-hidden="true">⚙</div>
+            <div class="timeline-content">
+              <h4 data-i18n="ai.tl.p3.title">Fase 3 — Motor de análisis</h4>
+              <p data-i18n="ai.tl.p3.desc">Integración de Stockfish para análisis de partidas.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot" aria-hidden="true">🤖</div>
+            <div class="timeline-content">
+              <h4 data-i18n="ai.tl.p4.title">Fase 4 — IA conversacional</h4>
+              <p data-i18n="ai.tl.p4.desc">Asistente de entrenamiento personalizado con LLM.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo" aria-label="Cuba Nica Chess Academy">
+            <span class="nav-logo-icon" aria-hidden="true">♟</span>
+            <span class="nav-logo-text">
+              <span class="nav-logo-name">Cuba Nica Chess</span>
+              <span class="nav-logo-slogan" data-i18n="home.slogan">Disciplina hoy. Fuerza mañana.</span>
+            </span>
+          </a>
+          <p data-i18n="ft.desc">Academia virtual de ajedrez con metodología sólida, repertorios y ejercicios para todos los niveles.</p>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="ft.nav">Navegación</h4>
+          <ul role="list">
+            <li><a href="index.html"       data-i18n="nav.home">Inicio</a></li>
+            <li><a href="articles.html"    data-i18n="nav.articles">Artículos</a></li>
+            <li><a href="repertoires.html" data-i18n="nav.repertoires">Repertorios</a></li>
+            <li><a href="training.html"    data-i18n="nav.training">Entrenamientos</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="ft.resources">Recursos</h4>
+          <ul role="list">
+            <li><a href="about.html"         data-i18n="nav.about">Nosotros</a></li>
+            <li><a href="contact.html"       data-i18n="nav.contact">Contacto</a></li>
+            <li><a href="train-with-ai.html" data-i18n="nav.ai">Entrenar con IA</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="ft.follow">Síguenos</h4>
+          <ul role="list">
+            <li><a href="https://lichess.org" target="_blank" rel="noopener noreferrer">Lichess</a></li>
+            <li><a href="contact.html">YouTube</a></li>
+            <li><a href="contact.html">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span data-i18n="ft.copy">© 2024 Cuba Nica Chess Academy. Todos los derechos reservados.</span>
+        <span class="tag" data-i18n="ft.phase">Fase 1 — En desarrollo</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
