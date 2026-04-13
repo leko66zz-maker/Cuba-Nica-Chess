@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Cuba Nica Chess Academy — Escuela virtual de ajedrez. Disciplina hoy. Fuerza mañana." />
+  <title>Cuba Nica Chess Academy</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>♟</text></svg>" />
+</head>
+<body>
+
+  <!-- ========== NAVIGATION ========== -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a href="index.html" class="nav-logo" aria-label="Cuba Nica Chess Academy — Inicio">
+        <span class="nav-logo-icon" aria-hidden="true">♟</span>
+        <span class="nav-logo-text">
+          <span class="nav-logo-name">Cuba Nica Chess</span>
+          <span class="nav-logo-slogan" data-i18n="home.slogan">Disciplina hoy. Fuerza mañana.</span>
+        </span>
+      </a>
+
+      <ul id="nav-links" class="nav-links" role="list">
+        <li><a href="index.html"         data-i18n="nav.home">Inicio</a></li>
+        <li><a href="articles.html"      data-i18n="nav.articles">Artículos</a></li>
+        <li><a href="repertoires.html"   data-i18n="nav.repertoires">Repertorios</a></li>
+        <li><a href="training.html"      data-i18n="nav.training">Entrenamientos</a></li>
+        <li><a href="about.html"         data-i18n="nav.about">Nosotros</a></li>
+        <li><a href="contact.html"       data-i18n="nav.contact">Contacto</a></li>
+        <li><a href="train-with-ai.html" data-i18n="nav.ai" class="nav-ai">Entrenar con IA</a></li>
+      </ul>
+
+      <div class="lang-toggle" role="group" aria-label="Language selector">
+        <button data-lang="es" aria-label="Cambiar a español">ES</button>
+        <button data-lang="en" aria-label="Switch to English">EN</button>
+      </div>
+
+      <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="container">
+      <span class="hero-eyebrow" data-i18n="home.eyebrow">Academia de Ajedrez</span>
+      <h1 id="hero-title" data-i18n="home.title">Cuba Nica Chess Academy</h1>
+      <p class="hero-slogan" data-i18n="home.slogan">Disciplina hoy. Fuerza mañana.</p>
+      <p class="hero-desc" data-i18n="home.desc">Una escuela virtual de ajedrez dedicada a formar jugadores disciplinados, creativos y apasionados.</p>
+      <div class="hero-cta">
+        <a href="repertoires.html" class="btn btn-primary" data-i18n="home.cta.primary">Ver Repertorios</a>
+        <a href="training.html"    class="btn btn-outline" data-i18n="home.cta.secondary">Ir a Entrenamientos</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== STAT BAR ========== -->
+  <div class="stat-bar" aria-label="Statistics">
+    <div class="container">
+      <div class="stat-grid">
+        <div class="stat-item">
+          <div class="stat-number">12+</div>
+          <div class="stat-label" data-i18n="art.title">Artículos</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">8</div>
+          <div class="stat-label" data-i18n="nav.repertoires">Repertorios</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">30+</div>
+          <div class="stat-label" data-i18n="nav.training">Ejercicios</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">2</div>
+          <div class="stat-label">Idiomas</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== FEATURES ========== -->
+  <section class="features-strip section-pad-sm" aria-labelledby="feat-title">
+    <div class="container">
+      <div class="text-center" style="margin-bottom: 2.5rem;">
+        <h2 class="section-title" id="feat-title" data-i18n="feat.title">¿Por qué entrenar con nosotros?</h2>
+        <p class="section-subtitle" data-i18n="feat.sub">Metodología sólida, contenido de calidad y una comunidad apasionada.</p>
+      </div>
+      <div class="cards-grid">
+        <div class="card">
+          <div class="card-icon" aria-hidden="true">♜</div>
+          <h3 data-i18n="feat1.title">Repertorios Estructurados</h3>
+          <p data-i18n="feat1.desc">Aperturas cuidadosamente elegidas para construir una base sólida y coherente.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon" aria-hidden="true">⚔️</div>
+          <h3 data-i18n="feat2.title">Ejercicios Prácticos</h3>
+          <p data-i18n="feat2.desc">Táctica, finales y posición. Ejercicios adaptados a cada nivel.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon" aria-hidden="true">📖</div>
+          <h3 data-i18n="feat3.title">Artículos &amp; Análisis</h3>
+          <p data-i18n="feat3.desc">Artículos educativos sobre conceptos clave, estrategia y partidas maestras.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon" aria-hidden="true">🌐</div>
+          <h3 data-i18n="feat4.title">Bilingüe (ES / EN)</h3>
+          <p data-i18n="feat4.desc">Todo el contenido disponible en español e inglés para una audiencia global.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FEATURED ARTICLES ========== -->
+  <section class="section-pad" aria-labelledby="art-preview-title">
+    <div class="container">
+      <div class="text-center" style="margin-bottom: 2.5rem;">
+        <h2 class="section-title" id="art-preview-title" data-i18n="home.articles.title">Artículos Recientes</h2>
+        <p class="section-subtitle" data-i18n="home.articles.sub">Aprendizaje profundo para jugadores de todos los niveles.</p>
+      </div>
+      <div class="cards-grid">
+
+        <article class="article-card">
+          <div class="article-card-img" aria-hidden="true">♔</div>
+          <div class="article-card-body">
+            <span class="tag" data-i18n="art1.tag">Aperturas</span>
+            <h3 data-i18n="art1.title">Por qué 1.e4 es la mejor apertura para principiantes</h3>
+            <p data-i18n="art1.body">La jugada 1.e4 abre el camino para los alfiles y la dama, domina el centro e inicia el desarrollo rápido.</p>
+            <div class="article-card-meta">
+              <span>2 Ene 2024</span>
+              <a href="articles.html" data-i18n="art1.read">Leer artículo →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="article-card">
+          <div class="article-card-img" aria-hidden="true">♞</div>
+          <div class="article-card-body">
+            <span class="tag" data-i18n="art2.tag">Táctica</span>
+            <h3 data-i18n="art2.title">La horquilla de caballo: el arma táctica más versátil</h3>
+            <p data-i18n="art2.body">Aprende a identificar y ejecutar bifurcaciones de caballo con ejercicios prácticos y ejemplos de partidas maestras.</p>
+            <div class="article-card-meta">
+              <span>15 Ene 2024</span>
+              <a href="articles.html" data-i18n="art2.read">Leer artículo →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="article-card">
+          <div class="article-card-img" aria-hidden="true">♚</div>
+          <div class="article-card-body">
+            <span class="tag" data-i18n="art3.tag">Finales</span>
+            <h3 data-i18n="art3.title">Rey y peón contra rey: domina el cuadrado</h3>
+            <p data-i18n="art3.body">El 'cuadrado del rey' es uno de los conceptos más importantes en los finales de peones.</p>
+            <div class="article-card-meta">
+              <span>28 Ene 2024</span>
+              <a href="articles.html" data-i18n="art3.read">Leer artículo →</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+      <div class="text-center" style="margin-top: 2rem;">
+        <a href="articles.html" class="btn btn-outline" data-i18n="home.articles.more">Ver todos los artículos</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA BANNER ========== -->
+  <section class="section-pad-sm" style="background: var(--bg-secondary); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+    <div class="container text-center">
+      <h2 style="font-size: clamp(1.4rem,3vw,2rem); margin-bottom: 0.75rem;" data-i18n="home.cta2.title">¿Listo para mejorar tu juego?</h2>
+      <p style="color: var(--text-muted); max-width: 500px; margin: 0 auto 1.75rem;" data-i18n="home.cta2.desc">Explora nuestros repertorios, practica tus tácticas y únete a la academia.</p>
+      <a href="training.html" class="btn btn-primary" data-i18n="home.cta2.btn">Empezar ahora</a>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo" aria-label="Cuba Nica Chess Academy">
+            <span class="nav-logo-icon" aria-hidden="true">♟</span>
+            <span class="nav-logo-text">
+              <span class="nav-logo-name">Cuba Nica Chess</span>
+              <span class="nav-logo-slogan" data-i18n="home.slogan">Disciplina hoy. Fuerza mañana.</span>
+            </span>
+          </a>
+          <p data-i18n="ft.desc">Academia virtual de ajedrez con metodología sólida, repertorios y ejercicios para todos los niveles.</p>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="ft.nav">Navegación</h4>
+          <ul role="list">
+            <li><a href="index.html"         data-i18n="nav.home">Inicio</a></li>
+            <li><a href="articles.html"      data-i18n="nav.articles">Artículos</a></li>
+            <li><a href="repertoires.html"   data-i18n="nav.repertoires">Repertorios</a></li>
+            <li><a href="training.html"      data-i18n="nav.training">Entrenamientos</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="ft.resources">Recursos</h4>
+          <ul role="list">
+            <li><a href="about.html"         data-i18n="nav.about">Nosotros</a></li>
+            <li><a href="contact.html"       data-i18n="nav.contact">Contacto</a></li>
+            <li><a href="train-with-ai.html" data-i18n="nav.ai">Entrenar con IA</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="ft.follow">Síguenos</h4>
+          <ul role="list">
+            <li><a href="https://lichess.org" target="_blank" rel="noopener noreferrer">Lichess</a></li>
+            <li><a href="contact.html">YouTube</a></li>
+            <li><a href="contact.html">Instagram</a></li>
+            <li><a href="contact.html">Facebook</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span data-i18n="ft.copy">© 2024 Cuba Nica Chess Academy. Todos los derechos reservados.</span>
+        <span class="tag" data-i18n="ft.phase">Fase 1 — En desarrollo</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
