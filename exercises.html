@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ejercicios — Cuba Nica Chess Academy</title>
+  <meta name="description" content="Ejercicios tácticos y de finales de Cuba Nica Chess Academy. Entrena tu cálculo y visión táctica." />
+  <meta name="theme-color" content="#0d0d0d" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    .solution-reveal {
+      display: none;
+      margin-top: 0.75rem;
+      padding: 0.75rem 1rem;
+      background: rgba(201, 168, 76, 0.08);
+      border: 1px solid rgba(201, 168, 76, 0.2);
+      border-radius: var(--radius);
+      font-size: 0.875rem;
+      color: var(--color-gold-light);
+      font-family: monospace;
+    }
+    .solution-reveal.visible { display: block; }
+    .ex-btn-group { display: flex; gap: 0.5rem; margin-top: 1rem; flex-wrap: wrap; }
+  </style>
+</head>
+<body>
+
+  <!-- ===================== NAVIGATION ===================== -->
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="container navbar__inner">
+      <a href="index.html" class="navbar__logo" aria-label="Cuba Nica Chess Academy — Inicio">
+        <span class="navbar__logo-icon" aria-hidden="true">♛</span>
+        Cuba Nica <span>Chess</span>
+      </a>
+      <button class="navbar__toggle" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="navbar__menu" role="list">
+        <li><a href="index.html"         class="navbar__link" data-i18n="nav.home">Inicio</a></li>
+        <li><a href="blog.html"          class="navbar__link" data-i18n="nav.blog">Blog</a></li>
+        <li><a href="repertoires.html"   class="navbar__link" data-i18n="nav.repertoires">Repertorios</a></li>
+        <li><a href="exercises.html"     class="navbar__link" data-i18n="nav.exercises">Ejercicios</a></li>
+        <li><a href="train-with-ai.html" class="navbar__link" data-i18n="nav.ai">Entrena con IA</a></li>
+        <li><a href="about.html"         class="navbar__link" data-i18n="nav.about">Nosotros</a></li>
+        <li><a href="contact.html"       class="navbar__link" data-i18n="nav.contact">Contacto</a></li>
+      </ul>
+      <div class="navbar__actions">
+        <div class="lang-toggle" role="group" aria-label="Seleccionar idioma">
+          <button class="lang-btn active" data-lang="es">ES</button>
+          <button class="lang-btn"        data-lang="en">EN</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===================== PAGE HEADER ===================== -->
+  <header class="page-header">
+    <div class="container">
+      <div class="page-header__badge" data-i18n="ex.badge">Ejercicios</div>
+      <h1 data-i18n="ex.title">Tácticas y finales</h1>
+      <p data-i18n="ex.subtitle">Entrena tu cálculo y visión táctica.</p>
+    </div>
+  </header>
+
+  <!-- ===================== EXERCISES ===================== -->
+  <section class="section" aria-labelledby="ex-heading">
+    <div class="container">
+
+      <h2 class="section-title" id="ex-heading">Ejercicios tácticos</h2>
+      <hr class="section-divider" aria-hidden="true" />
+
+      <!--
+        TODO (Phase 2): Replace each .exercise-card__board div with a
+        Chessboard.js instance:
+
+          var puzzle1 = Chessboard('puzzle-1', {
+            position: 'r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4',
+            orientation: 'white'
+          });
+
+        Then add a button to submit the move and check against the solution.
+      -->
+
+      <div class="grid-3">
+
+        <!-- Exercise 1 -->
+        <div class="exercise-card">
+          <div class="exercise-card__board" aria-label="Posición del ejercicio 1 — tablero interactivo próximamente">
+            <div class="exercise-card__board-placeholder">
+              <span class="piece" aria-hidden="true">♞</span>
+              <p data-i18n="ex.board.label">Tablero interactivo próximamente</p>
+            </div>
+          </div>
+          <div class="exercise-card__body">
+            <div class="difficulty" aria-label="Dificultad: 1 de 5">
+              <span class="difficulty__dot difficulty__dot--filled"></span>
+              <span class="difficulty__dot"></span>
+              <span class="difficulty__dot"></span>
+              <span class="difficulty__dot"></span>
+              <span class="difficulty__dot"></span>
+            </div>
+            <h3 class="article-card__title">Mate en 1 — Básico</h3>
+            <p style="font-size:0.85rem;color:var(--color-text-muted);">Las blancas juegan y dan jaque mate en 1. FEN: <code style="font-size:0.8em;">6k1/5ppp/8/8/8/8/5PPP/4R1K1 w — — 0 1</code></p>
+            <div class="ex-btn-group">
+              <button class="btn btn--sm btn--ghost" onclick="toggleHint(this,'Pista: ¿qué pieza puede dar jaque en la columna e?')" data-i18n="ex.hint">Ver pista</button>
+              <button class="btn btn--sm btn--outline" onclick="toggleSolution(this,'✅ 1.Re8#')" data-i18n="ex.solution">Ver solución</button>
+            </div>
+            <div class="solution-reveal"></div>
+          </div>
+        </div>
+
+        <!-- Exercise 2 -->
+        <div class="exercise-card">
+          <div class="exercise-card__board" aria-label="Posición del ejercicio 2">
+            <div class="exercise-card__board-placeholder">
+              <span class="piece" aria-hidden="true">♝</span>
+              <p data-i18n="ex.board.label">Tablero interactivo próximamente</p>
+            </div>
+          </div>
+          <div class="exercise-card__body">
+            <div class="difficulty" aria-label="Dificultad: 2 de 5">
+              <span class="difficulty__dot difficulty__dot--filled"></span>
+              <span class="difficulty__dot difficulty__dot--filled"></span>
+              <span class="difficulty__dot"></span>
+              <span class="difficulty__dot"></span>
+              <span class="difficulty__dot"></span>
+            </div>
+            <h3 class="article-card__title">Horquilla de caballo — Intermedio</h3>
+            <p style="font-size:0.85rem;color:var(--color-text-muted);">Las blancas encuentran una horquilla ganando material decisivo. FEN: <code style="font-size:0.8em;">r3k2r/ppp2ppp/2n1bn2/3q4/3P4/2N1BN2/PPP2PPP/R3K2R w KQkq — 0 1</code></p>
+            <div class="ex-btn-group">
+              <button class="btn btn--sm btn--ghost" onclick="toggleHint(this,'Pista: busca un salto de caballo que ataque rey y dama simultáneamente.')" data-i18n="ex.hint">Ver pista</button>
+              <button class="btn btn--sm btn--outline" onclick="toggleSolution(this,'✅ 1.Cb5 (ataca rey en e8 y dama en d5)')" data-i18n="ex.solution">Ver solución</button>
+            </div>
+            <div class="solution-reveal"></div>
+          </div>
+        </div>
+
+        <!-- Exercise 3 -->
+        <div class="exercise-card">
+          <div class="exercise-card__board" aria-label="Posición del ejercicio 3">
+            <div class="exercise-card__board-placeholder">
+              <span class="piece" aria-hidden="true">♛</span>
+              <p data-i18n="ex.board.label">Tablero interactivo próximamente</p>
+            </div>
+          </div>
+          <div class="exercise-card__body">
+            <div class="difficulty" aria-label="Dificultad: 3 de 5">
+              <span class="difficulty__dot difficulty__dot--filled"></span>
+              <span class="difficulty__dot difficulty__dot--filled"></span>
+              <span class="difficulty__dot difficulty__dot--filled"></span>
+              <span class="difficulty__dot"></span>
+              <span class="difficulty__dot"></span>
+            </div>
+            <h3 class="article-card__title">Sacrificio de dama — Avanzado</h3>
+            <p style="font-size:0.85rem;color:var(--color-text-muted);">Las blancas tienen un poderoso sacrificio que lleva a mate forzado en 3. Calcula con cuidado antes de revelar la solución.</p>
+            <div class="ex-btn-group">
+              <button class="btn btn--sm btn--ghost" onclick="toggleHint(this,'Pista: mira las diagonales que apuntan al rey negro. ¿La dama puede abrirlas?')" data-i18n="ex.hint">Ver pista</button>
+              <button class="btn btn--sm btn--outline" onclick="toggleSolution(this,'✅ 1.Dxh7+! Rxh7 2.Th1+ Rg8 3.Th8#')" data-i18n="ex.solution">Ver solución</button>
+            </div>
+            <div class="solution-reveal"></div>
+          </div>
+        </div>
+
+        <!-- Exercise 4 — Endgame -->
+        <div class="exercise-card">
+          <div class="exercise-card__board" aria-label="Final de rey y peón">
+            <div class="exercise-card__board-placeholder">
+              <span class="piece" aria-hidden="true">♚</span>
+              <p data-i18n="ex.board.label">Tablero interactivo próximamente</p>
+            </div>
+          </div>
+          <div class="exercise-card__body">
+            <div class="difficulty" aria-label="Dificultad: 2 de 5">
+              <span class="difficulty__dot difficulty__dot--filled"></span>
+              <span class="difficulty__dot difficulty__dot--filled"></span>
+              <span class="difficulty__dot"></span>
+              <span class="difficulty__dot"></span>
+              <span class="difficulty__dot"></span>
+            </div>
+            <h3 class="article-card__title">Final Rey y Peón — Regla del cuadrado</h3>
+            <p style="font-size:0.85rem;color:var(--color-text-muted);">¿Puede el rey negro alcanzar el peón blanco antes de que corone? Aplica la regla del cuadrado para resolverlo en segundos.</p>
+            <div class="ex-btn-group">
+              <button class="btn btn--sm btn--ghost" onclick="toggleHint(this,'Pista: traza un cuadrado desde el peón hasta la 8ª fila. ¿Está el rey negro dentro?')" data-i18n="ex.hint">Ver pista</button>
+              <button class="btn btn--sm btn--outline" onclick="toggleSolution(this,'✅ Sí, el rey negro alcanza el peón — tablas.')" data-i18n="ex.solution">Ver solución</button>
+            </div>
+            <div class="solution-reveal"></div>
+          </div>
+        </div>
+
+        <!-- Exercise 5 -->
+        <div class="exercise-card">
+          <div class="exercise-card__board" aria-label="Ataque combinado">
+            <div class="exercise-card__board-placeholder">
+              <span class="piece" aria-hidden="true">♜</span>
+              <p data-i18n="ex.board.label">Tablero interactivo próximamente</p>
+            </div>
+          </div>
+          <div class="exercise-card__body">
+            <div class="difficulty" aria-label="Dificultad: 4 de 5">
+              <span class="difficulty__dot difficulty__dot--filled"></span>
+              <span class="difficulty__dot difficulty__dot--filled"></span>
+              <span class="difficulty__dot difficulty__dot--filled"></span>
+              <span class="difficulty__dot difficulty__dot--filled"></span>
+              <span class="difficulty__dot"></span>
+            </div>
+            <h3 class="article-card__title">Combinación posicional — Avanzado</h3>
+            <p style="font-size:0.85rem;color:var(--color-text-muted);">Las blancas convierten su ventaja posicional en una victoria material con una secuencia de 4 movimientos precisos.</p>
+            <div class="ex-btn-group">
+              <button class="btn btn--sm btn--ghost" onclick="toggleHint(this,'Pista: busca la apertura de la séptima fila.')" data-i18n="ex.hint">Ver pista</button>
+              <button class="btn btn--sm btn--outline" onclick="toggleSolution(this,'✅ 1.Td7 Tc8 2.Txf7! Rxf7 3.Dc4+ Re8 4.Dc6+')" data-i18n="ex.solution">Ver solución</button>
+            </div>
+            <div class="solution-reveal"></div>
+          </div>
+        </div>
+
+        <!-- Placeholder exercise -->
+        <div class="exercise-card" style="border-style:dashed; opacity:0.55; pointer-events:none;">
+          <div class="exercise-card__board">
+            <div class="exercise-card__board-placeholder">
+              <span class="piece" aria-hidden="true">🤖</span>
+              <p>Más ejercicios próximamente</p>
+            </div>
+          </div>
+          <div class="exercise-card__body">
+            <h3 class="article-card__title">Más ejercicios en preparación</h3>
+            <p style="font-size:0.85rem;color:var(--color-text-muted);">Tablero interactivo y más posiciones se añadirán en fases futuras.</p>
+          </div>
+        </div>
+
+      </div><!-- end grid-3 -->
+    </div>
+  </section>
+
+  <!-- ===================== CTA ===================== -->
+  <section class="cta-section" aria-labelledby="cta-ex-heading">
+    <div class="container">
+      <h2 id="cta-ex-heading" data-i18n="cta.title">¡Únete a nuestra comunidad!</h2>
+      <p data-i18n="cta.subtitle">Síguenos en Facebook para recibir las últimas publicaciones, partidas y noticias de la academia.</p>
+      <div class="cta-actions">
+        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="btn btn--facebook" data-i18n="cta.facebook">Seguir en Facebook</a>
+        <button class="btn btn--outline" data-action="notify" data-i18n="cta.notify">Avísame cuando llegue la membresía</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand"><span aria-hidden="true">♛</span> Cuba Nica <span>Chess</span></div>
+          <p class="footer__tagline" data-i18n="footer.tagline">Escuela virtual de ajedrez para toda la comunidad hispanohablante.</p>
+        </div>
+        <div>
+          <div class="footer__heading" data-i18n="footer.nav">Navegación</div>
+          <ul class="footer__links" role="list">
+            <li><a href="index.html"        data-i18n="nav.home">Inicio</a></li>
+            <li><a href="blog.html"         data-i18n="nav.blog">Blog</a></li>
+            <li><a href="repertoires.html"  data-i18n="nav.repertoires">Repertorios</a></li>
+            <li><a href="exercises.html"    data-i18n="nav.exercises">Ejercicios</a></li>
+            <li><a href="about.html"        data-i18n="nav.about">Nosotros</a></li>
+            <li><a href="contact.html"      data-i18n="nav.contact">Contacto</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer__heading" data-i18n="footer.social">Redes</div>
+          <ul class="footer__links" role="list">
+            <li><a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy" data-i18n="footer.copy">© 2025 Cuba Nica Chess Academy. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    /* Hint / Solution reveal toggle */
+    function toggleHint(btn, hintText) {
+      var card = btn.closest('.exercise-card');
+      var reveal = card.querySelector('.solution-reveal');
+      if (reveal.classList.contains('visible') && reveal.textContent === hintText) {
+        reveal.classList.remove('visible');
+      } else {
+        reveal.textContent = hintText;
+        reveal.classList.add('visible');
+      }
+    }
+
+    function toggleSolution(btn, solutionText) {
+      var card = btn.closest('.exercise-card');
+      var reveal = card.querySelector('.solution-reveal');
+      if (reveal.classList.contains('visible') && reveal.textContent === solutionText) {
+        reveal.classList.remove('visible');
+      } else {
+        reveal.textContent = solutionText;
+        reveal.classList.add('visible');
+      }
+    }
+  </script>
+</body>
+</html>
