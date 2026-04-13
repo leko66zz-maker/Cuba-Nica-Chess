@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Repertorios — Cuba Nica Chess Academy</title>
+  <meta name="description" content="Repertorios de aperturas recomendados por Cuba Nica Chess Academy: sistemas sólidos para blancas y negras." />
+  <meta name="theme-color" content="#0d0d0d" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    /* Extra styles specific to this page */
+    .rep-tabs {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid var(--color-border);
+      padding-bottom: 1rem;
+    }
+
+    .rep-tab {
+      background: none;
+      border: 1px solid var(--color-border);
+      color: var(--color-text-muted);
+      padding: 0.5rem 1.25rem;
+      border-radius: var(--radius);
+      font-size: 0.9rem;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background var(--transition), color var(--transition), border-color var(--transition);
+    }
+
+    .rep-tab.active,
+    .rep-tab:hover {
+      background: var(--color-gold);
+      color: #000;
+      border-color: var(--color-gold);
+    }
+
+    .rep-panel { display: none; }
+    .rep-panel.active { display: block; }
+
+    .opening-notes {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-left: 3px solid var(--color-gold);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      font-size: 0.9rem;
+      color: var(--color-text-muted);
+      margin-top: 1.5rem;
+    }
+
+    .opening-notes strong { color: var(--color-gold); }
+  </style>
+</head>
+<body>
+
+  <!-- ===================== NAVIGATION ===================== -->
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="container navbar__inner">
+      <a href="index.html" class="navbar__logo" aria-label="Cuba Nica Chess Academy — Inicio">
+        <span class="navbar__logo-icon" aria-hidden="true">♛</span>
+        Cuba Nica <span>Chess</span>
+      </a>
+      <button class="navbar__toggle" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="navbar__menu" role="list">
+        <li><a href="index.html"         class="navbar__link" data-i18n="nav.home">Inicio</a></li>
+        <li><a href="blog.html"          class="navbar__link" data-i18n="nav.blog">Blog</a></li>
+        <li><a href="repertoires.html"   class="navbar__link" data-i18n="nav.repertoires">Repertorios</a></li>
+        <li><a href="exercises.html"     class="navbar__link" data-i18n="nav.exercises">Ejercicios</a></li>
+        <li><a href="train-with-ai.html" class="navbar__link" data-i18n="nav.ai">Entrena con IA</a></li>
+        <li><a href="about.html"         class="navbar__link" data-i18n="nav.about">Nosotros</a></li>
+        <li><a href="contact.html"       class="navbar__link" data-i18n="nav.contact">Contacto</a></li>
+      </ul>
+      <div class="navbar__actions">
+        <div class="lang-toggle" role="group" aria-label="Seleccionar idioma">
+          <button class="lang-btn active" data-lang="es">ES</button>
+          <button class="lang-btn"        data-lang="en">EN</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===================== PAGE HEADER ===================== -->
+  <header class="page-header">
+    <div class="container">
+      <div class="page-header__badge" data-i18n="rep.badge">Repertorios</div>
+      <h1 data-i18n="rep.title">Aperturas recomendadas</h1>
+      <p data-i18n="rep.subtitle">Sistemas probados para blancas y negras.</p>
+    </div>
+  </header>
+
+  <!-- ===================== REPERTOIRE CONTENT ===================== -->
+  <section class="section" aria-labelledby="rep-heading">
+    <div class="container">
+
+      <!-- Tabs: White / Black -->
+      <div class="rep-tabs" role="tablist">
+        <button class="rep-tab active" role="tab" aria-selected="true"  id="tab-white" aria-controls="panel-white" data-i18n="rep.white">Con blancas</button>
+        <button class="rep-tab"        role="tab" aria-selected="false" id="tab-black" aria-controls="panel-black" data-i18n="rep.black">Con negras</button>
+      </div>
+
+      <!-- WHITE PANEL -->
+      <div class="rep-panel active" id="panel-white" role="tabpanel" aria-labelledby="tab-white">
+        <table class="opening-table" aria-label="Repertorio con blancas">
+          <thead>
+            <tr>
+              <th>Apertura</th>
+              <th>Variante principal</th>
+              <th>Nivel</th>
+              <th>Movimientos iniciales</th>
+              <th>PGN</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Apertura Italiana</strong></td>
+              <td>Sistema Giuoco Piano</td>
+              <td>Principiante–Intermedio</td>
+              <td><span class="pgn-badge">1.e4 e5 2.Cf3 Cc6 3.Ac4</span></td>
+              <td>
+                <!-- TODO (Phase 2): Link to interactive PGN viewer -->
+                <a href="#" class="btn btn--sm btn--ghost">Ver PGN</a>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Ataque Londres</strong></td>
+              <td>Sistema sin d5 negro</td>
+              <td>Principiante–Intermedio</td>
+              <td><span class="pgn-badge">1.d4 2.Cf3 3.Af4</span></td>
+              <td><a href="#" class="btn btn--sm btn--ghost">Ver PGN</a></td>
+            </tr>
+            <tr>
+              <td><strong>Apertura Catalana</strong></td>
+              <td>Sistema cerrado</td>
+              <td>Intermedio–Avanzado</td>
+              <td><span class="pgn-badge">1.d4 Cf6 2.c4 e6 3.g3</span></td>
+              <td><a href="#" class="btn btn--sm btn--ghost">Ver PGN</a></td>
+            </tr>
+            <tr>
+              <td><strong>Apertura Inglesa</strong></td>
+              <td>1.c4 — Estrategia flexible</td>
+              <td>Intermedio–Avanzado</td>
+              <td><span class="pgn-badge">1.c4</span></td>
+              <td><a href="#" class="btn btn--sm btn--ghost">Ver PGN</a></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="opening-notes">
+          <strong>Nota del entrenador:</strong> Para los jugadores que comienzan, recomendamos la
+          Apertura Italiana. Enseña principios fundamentales (control del centro, desarrollo rápido,
+          seguridad del rey) sin sobrecargar de teoría. El Ataque Londres es ideal si prefieres
+          sistemas más sólidos e independientes de las respuestas del rival.
+        </div>
+
+        <!--
+          TODO (Phase 2): Embed Chessboard.js + PGN viewer here.
+          Example integration:
+            <div id="white-board" style="width:400px"></div>
+            <div id="pgn-moves"></div>
+            <script>
+              // Load selected PGN into the viewer
+              loadPGN('e4 e5 Nf3 Nc6 Bc4...');
+            </script>
+        -->
+      </div>
+
+      <!-- BLACK PANEL -->
+      <div class="rep-panel" id="panel-black" role="tabpanel" aria-labelledby="tab-black">
+        <table class="opening-table" aria-label="Repertorio con negras">
+          <thead>
+            <tr>
+              <th>Apertura</th>
+              <th>Sistema recomendado</th>
+              <th>Nivel</th>
+              <th>Movimientos iniciales</th>
+              <th>PGN</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>vs. 1.e4 — Defensa Berlinesa</strong></td>
+              <td>Variante del lazo de Berlín</td>
+              <td>Intermedio–Avanzado</td>
+              <td><span class="pgn-badge">1.e4 e5 2.Cf3 Cc6 3.Ab5 Cf6</span></td>
+              <td><a href="#" class="btn btn--sm btn--ghost">Ver PGN</a></td>
+            </tr>
+            <tr>
+              <td><strong>vs. 1.e4 — Defensa Siciliana</strong></td>
+              <td>Variante Taimanov</td>
+              <td>Intermedio</td>
+              <td><span class="pgn-badge">1.e4 c5 2.Cf3 e6 3.d4 cxd4 4.Cxd4 Cc6</span></td>
+              <td><a href="#" class="btn btn--sm btn--ghost">Ver PGN</a></td>
+            </tr>
+            <tr>
+              <td><strong>vs. 1.d4 — Defensa India de Rey</strong></td>
+              <td>Sistema clásico</td>
+              <td>Intermedio–Avanzado</td>
+              <td><span class="pgn-badge">1.d4 Cf6 2.c4 g6 3.Cc3 Ag7 4.e4 d6</span></td>
+              <td><a href="#" class="btn btn--sm btn--ghost">Ver PGN</a></td>
+            </tr>
+            <tr>
+              <td><strong>vs. 1.d4 — Defensa Nimzo-India</strong></td>
+              <td>Variante Rubinstein</td>
+              <td>Intermedio–Avanzado</td>
+              <td><span class="pgn-badge">1.d4 Cf6 2.c4 e6 3.Cc3 Ab4</span></td>
+              <td><a href="#" class="btn btn--sm btn--ghost">Ver PGN</a></td>
+            </tr>
+            <tr>
+              <td><strong>vs. otros — Defensa Holandesa</strong></td>
+              <td>Variante clásica</td>
+              <td>Intermedio</td>
+              <td><span class="pgn-badge">1.d4 f5</span></td>
+              <td><a href="#" class="btn btn--sm btn--ghost">Ver PGN</a></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="opening-notes">
+          <strong>Nota del entrenador:</strong> Con negras priorizamos sistemas que permitan jugar
+          con iniciativa. La Defensa Siciliana (Taimanov) es un arsenal completo para enfrentarse al
+          1.e4. Contra 1.d4, la India de Rey ofrece posibilidades de contrajuego dinámico
+          independientemente de las elecciones blancas.
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================== CTA ===================== -->
+  <section class="cta-section" aria-labelledby="cta-rep-heading">
+    <div class="container">
+      <h2 id="cta-rep-heading" data-i18n="cta.title">¡Únete a nuestra comunidad!</h2>
+      <p data-i18n="cta.subtitle">Síguenos en Facebook para recibir las últimas publicaciones, partidas y noticias de la academia.</p>
+      <div class="cta-actions">
+        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="btn btn--facebook" data-i18n="cta.facebook">Seguir en Facebook</a>
+        <button class="btn btn--outline" data-action="notify" data-i18n="cta.notify">Avísame cuando llegue la membresía</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand"><span aria-hidden="true">♛</span> Cuba Nica <span>Chess</span></div>
+          <p class="footer__tagline" data-i18n="footer.tagline">Escuela virtual de ajedrez para toda la comunidad hispanohablante.</p>
+        </div>
+        <div>
+          <div class="footer__heading" data-i18n="footer.nav">Navegación</div>
+          <ul class="footer__links" role="list">
+            <li><a href="index.html"        data-i18n="nav.home">Inicio</a></li>
+            <li><a href="blog.html"         data-i18n="nav.blog">Blog</a></li>
+            <li><a href="repertoires.html"  data-i18n="nav.repertoires">Repertorios</a></li>
+            <li><a href="exercises.html"    data-i18n="nav.exercises">Ejercicios</a></li>
+            <li><a href="about.html"        data-i18n="nav.about">Nosotros</a></li>
+            <li><a href="contact.html"      data-i18n="nav.contact">Contacto</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer__heading" data-i18n="footer.social">Redes</div>
+          <ul class="footer__links" role="list">
+            <li><a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy" data-i18n="footer.copy">© 2025 Cuba Nica Chess Academy. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    /* Tab switching for white/black repertoires */
+    (function () {
+      var tabs   = document.querySelectorAll('.rep-tab');
+      var panels = document.querySelectorAll('.rep-panel');
+
+      tabs.forEach(function (tab) {
+        tab.addEventListener('click', function () {
+          tabs.forEach(function (t) {
+            t.classList.remove('active');
+            t.setAttribute('aria-selected', 'false');
+          });
+          panels.forEach(function (p) { p.classList.remove('active'); });
+
+          tab.classList.add('active');
+          tab.setAttribute('aria-selected', 'true');
+          var target = document.getElementById(tab.getAttribute('aria-controls'));
+          if (target) target.classList.add('active');
+        });
+      });
+    }());
+  </script>
+</body>
+</html>

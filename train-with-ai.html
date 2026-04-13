@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Entrena con IA — Cuba Nica Chess Academy</title>
+  <meta name="description" content="Próximamente: entrena con inteligencia artificial en Cuba Nica Chess Academy. Análisis Stockfish y ejercicios adaptativos." />
+  <meta name="theme-color" content="#0d0d0d" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ===================== NAVIGATION ===================== -->
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="container navbar__inner">
+      <a href="index.html" class="navbar__logo" aria-label="Cuba Nica Chess Academy — Inicio">
+        <span class="navbar__logo-icon" aria-hidden="true">♛</span>
+        Cuba Nica <span>Chess</span>
+      </a>
+      <button class="navbar__toggle" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="navbar__menu" role="list">
+        <li><a href="index.html"         class="navbar__link" data-i18n="nav.home">Inicio</a></li>
+        <li><a href="blog.html"          class="navbar__link" data-i18n="nav.blog">Blog</a></li>
+        <li><a href="repertoires.html"   class="navbar__link" data-i18n="nav.repertoires">Repertorios</a></li>
+        <li><a href="exercises.html"     class="navbar__link" data-i18n="nav.exercises">Ejercicios</a></li>
+        <li><a href="train-with-ai.html" class="navbar__link" data-i18n="nav.ai">Entrena con IA</a></li>
+        <li><a href="about.html"         class="navbar__link" data-i18n="nav.about">Nosotros</a></li>
+        <li><a href="contact.html"       class="navbar__link" data-i18n="nav.contact">Contacto</a></li>
+      </ul>
+      <div class="navbar__actions">
+        <div class="lang-toggle" role="group" aria-label="Seleccionar idioma">
+          <button class="lang-btn active" data-lang="es">ES</button>
+          <button class="lang-btn"        data-lang="en">EN</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===================== PAGE HEADER ===================== -->
+  <header class="page-header">
+    <div class="container">
+      <div class="page-header__badge" data-i18n="ai.badge">Próximamente</div>
+      <h1 data-i18n="ai.title">Entrena con Inteligencia Artificial</h1>
+      <p data-i18n="ai.desc">Estamos preparando un motor de IA que analizará tus partidas, identificará tus puntos débiles y propondrá ejercicios personalizados.</p>
+    </div>
+  </header>
+
+  <!-- ===================== AI PLACEHOLDER SECTION ===================== -->
+  <!--
+    ================================================================
+    TODO (Phase 2) — AI INTEGRATION POINTS:
+
+    1. STOCKFISH ENGINE
+       - Load Stockfish.js (WASM build) for in-browser analysis
+       - Example:
+           var engine = new Worker('js/stockfish.wasm.js');
+           engine.postMessage('uci');
+           engine.onmessage = function(e) { console.log(e.data); };
+
+    2. CHESSBOARD.JS INTEGRATION
+       - Add Chessboard.js for interactive board
+       - Example:
+           var board = Chessboard('ai-board', { position: 'start', draggable: true });
+         Then hook piece moves to Stockfish analysis.
+
+    3. GAME INPUT
+       - Allow PGN paste / file upload for analysis
+       - Parse PGN with chess.js library
+
+    4. ADAPTIVE EXERCISES
+       - Track user performance in localStorage (Phase 2) or backend (Phase 3)
+       - Select exercises based on identified weaknesses
+
+    5. MEMBER-ONLY CONTENT
+       - Gate AI features behind a login/membership wall
+       - Use JWT auth or a service like Memberstack / Auth0
+    ================================================================
+  -->
+  <section class="section" aria-labelledby="ai-main-heading">
+    <div class="container">
+
+      <div class="ai-placeholder">
+        <span class="ai-placeholder__icon" aria-hidden="true">🤖</span>
+        <h2 id="ai-main-heading" data-i18n="ai.title">Entrena con Inteligencia Artificial</h2>
+        <p data-i18n="ai.desc">Estamos preparando un motor de IA que analizará tus partidas, identificará tus puntos débiles y propondrá ejercicios personalizados.</p>
+
+        <div class="ai-features">
+          <div class="ai-feature" data-i18n="ai.f1">Análisis de partidas con Stockfish</div>
+          <div class="ai-feature" data-i18n="ai.f2">Ejercicios adaptativos según tu nivel</div>
+          <div class="ai-feature" data-i18n="ai.f3">Tablero interactivo con variantes</div>
+          <div class="ai-feature" data-i18n="ai.f4">Seguimiento de tu progreso</div>
+        </div>
+
+        <button class="btn btn--primary" data-action="notify" data-i18n="ai.notify">
+          Avísame cuando esté disponible
+        </button>
+      </div>
+
+      <!-- Decorative board placeholder for the future interactive board -->
+      <div style="text-align:center; margin-top:3rem;">
+        <p class="text-muted" style="margin-bottom:1rem; font-size:0.9rem;">
+          Vista previa del tablero interactivo (Fase 2):
+        </p>
+        <!--
+          TODO (Phase 2): Replace this div with:
+            <div id="ai-board" style="width:400px; margin:0 auto;"></div>
+            <script>
+              var board = Chessboard('ai-board', { position: 'start', draggable: true });
+            </script>
+        -->
+        <div id="ai-demo-board" aria-label="Tablero de vista previa" role="img"
+             style="opacity:0.35;"></div>
+        <p class="text-muted mt-2" style="font-size:0.8rem;">
+          ♟ Tablero interactivo con Chessboard.js — <em class="text-gold">Próximamente</em>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ROADMAP ===================== -->
+  <section class="section section--alt" aria-labelledby="roadmap-heading">
+    <div class="container">
+      <h2 class="section-title" id="roadmap-heading">Hoja de ruta</h2>
+      <hr class="section-divider" aria-hidden="true" />
+
+      <div class="resource-list" style="max-width:700px; margin:0 auto;">
+        <div class="resource-item">
+          <span class="resource-item__icon" aria-hidden="true">✅</span>
+          <div>
+            <h3 class="resource-item__title">Fase 1 — Base del sitio (actual)</h3>
+            <p class="resource-item__desc">Web estática bilingüe con contenido educativo, repertorios y ejercicios.</p>
+          </div>
+          <span class="resource-item__badge badge--available">Disponible</span>
+        </div>
+        <div class="resource-item">
+          <span class="resource-item__icon" aria-hidden="true">🔧</span>
+          <div>
+            <h3 class="resource-item__title">Fase 2 — Tablero interactivo y PGN</h3>
+            <p class="resource-item__desc">Chessboard.js + chess.js: tablero interactivo, visor de PGN y análisis básico.</p>
+          </div>
+          <span class="resource-item__badge badge--coming">Próximamente</span>
+        </div>
+        <div class="resource-item">
+          <span class="resource-item__icon" aria-hidden="true">🤖</span>
+          <div>
+            <h3 class="resource-item__title">Fase 3 — Motor de IA (Stockfish)</h3>
+            <p class="resource-item__desc">Análisis de partidas con Stockfish.js WASM, flechas de evaluación y ejercicios adaptativos.</p>
+          </div>
+          <span class="resource-item__badge badge--coming">Próximamente</span>
+        </div>
+        <div class="resource-item">
+          <span class="resource-item__icon" aria-hidden="true">🔐</span>
+          <div>
+            <h3 class="resource-item__title">Fase 4 — Comunidad privada de miembros</h3>
+            <p class="resource-item__desc">Área exclusiva con seguimiento de progreso, partidas comentadas y acceso a material premium.</p>
+          </div>
+          <span class="resource-item__badge badge--coming">Próximamente</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CTA ===================== -->
+  <section class="cta-section" aria-labelledby="cta-ai-heading">
+    <div class="container">
+      <h2 id="cta-ai-heading" data-i18n="cta.title">¡Únete a nuestra comunidad!</h2>
+      <p data-i18n="cta.subtitle">Síguenos en Facebook para recibir las últimas publicaciones, partidas y noticias de la academia.</p>
+      <div class="cta-actions">
+        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="btn btn--facebook" data-i18n="cta.facebook">Seguir en Facebook</a>
+        <button class="btn btn--outline" data-action="notify" data-i18n="cta.notify">Avísame cuando llegue la membresía</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand"><span aria-hidden="true">♛</span> Cuba Nica <span>Chess</span></div>
+          <p class="footer__tagline" data-i18n="footer.tagline">Escuela virtual de ajedrez para toda la comunidad hispanohablante.</p>
+        </div>
+        <div>
+          <div class="footer__heading" data-i18n="footer.nav">Navegación</div>
+          <ul class="footer__links" role="list">
+            <li><a href="index.html"        data-i18n="nav.home">Inicio</a></li>
+            <li><a href="blog.html"         data-i18n="nav.blog">Blog</a></li>
+            <li><a href="repertoires.html"  data-i18n="nav.repertoires">Repertorios</a></li>
+            <li><a href="exercises.html"    data-i18n="nav.exercises">Ejercicios</a></li>
+            <li><a href="about.html"        data-i18n="nav.about">Nosotros</a></li>
+            <li><a href="contact.html"      data-i18n="nav.contact">Contacto</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer__heading" data-i18n="footer.social">Redes</div>
+          <ul class="footer__links" role="list">
+            <li><a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy" data-i18n="footer.copy">© 2025 Cuba Nica Chess Academy. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    /* Render a dimmed decorative board for the AI page preview */
+    document.addEventListener('DOMContentLoaded', function () {
+      renderDemoBoard('ai-demo-board');
+    });
+  </script>
+</body>
+</html>

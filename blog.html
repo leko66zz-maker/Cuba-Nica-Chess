@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog — Cuba Nica Chess Academy</title>
+  <meta name="description" content="Artículos, análisis de partidas y cultura ajedrecística de Cuba Nica Chess Academy." />
+  <meta name="theme-color" content="#0d0d0d" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ===================== NAVIGATION ===================== -->
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="container navbar__inner">
+      <a href="index.html" class="navbar__logo" aria-label="Cuba Nica Chess Academy — Inicio">
+        <span class="navbar__logo-icon" aria-hidden="true">♛</span>
+        Cuba Nica <span>Chess</span>
+      </a>
+      <button class="navbar__toggle" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="navbar__menu" role="list">
+        <li><a href="index.html"         class="navbar__link" data-i18n="nav.home">Inicio</a></li>
+        <li><a href="blog.html"          class="navbar__link" data-i18n="nav.blog">Blog</a></li>
+        <li><a href="repertoires.html"   class="navbar__link" data-i18n="nav.repertoires">Repertorios</a></li>
+        <li><a href="exercises.html"     class="navbar__link" data-i18n="nav.exercises">Ejercicios</a></li>
+        <li><a href="train-with-ai.html" class="navbar__link" data-i18n="nav.ai">Entrena con IA</a></li>
+        <li><a href="about.html"         class="navbar__link" data-i18n="nav.about">Nosotros</a></li>
+        <li><a href="contact.html"       class="navbar__link" data-i18n="nav.contact">Contacto</a></li>
+      </ul>
+      <div class="navbar__actions">
+        <div class="lang-toggle" role="group" aria-label="Seleccionar idioma">
+          <button class="lang-btn active" data-lang="es">ES</button>
+          <button class="lang-btn"        data-lang="en">EN</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===================== PAGE HEADER ===================== -->
+  <header class="page-header">
+    <div class="container">
+      <div class="page-header__badge" data-i18n="blog.badge">Blog</div>
+      <h1 data-i18n="blog.title">Artículos y análisis</h1>
+      <p data-i18n="blog.subtitle">Contenido educativo sobre ajedrez, estrategia y cultura.</p>
+    </div>
+  </header>
+
+  <!-- ===================== BLOG CONTENT ===================== -->
+  <section class="section" aria-labelledby="blog-heading">
+    <div class="container">
+
+      <!-- Filter buttons -->
+      <div class="blog-filter" role="group" aria-label="Filtrar artículos">
+        <button class="filter-btn active" data-i18n="blog.filter.all">Todos</button>
+        <button class="filter-btn" data-i18n="blog.filter.strategy">Estrategia</button>
+        <button class="filter-btn" data-i18n="blog.filter.openings">Aperturas</button>
+        <button class="filter-btn" data-i18n="blog.filter.endgames">Finales</button>
+        <button class="filter-btn" data-i18n="blog.filter.culture">Cultura</button>
+      </div>
+
+      <!-- Articles grid -->
+      <div class="grid-3">
+
+        <!-- Article 1 -->
+        <article class="article-card">
+          <div class="article-card__thumb" aria-hidden="true">♜</div>
+          <div class="article-card__body">
+            <div class="article-card__meta">
+              <span class="article-card__tag">Estrategia</span>
+              <span>Abril 2025</span>
+            </div>
+            <h2 class="article-card__title">El dominio del centro: lecciones de los clásicos</h2>
+            <p class="article-card__excerpt">
+              Analizamos cómo Capablanca y Petrosian entendían el control del centro y cómo aplicar sus ideas en tus partidas modernas. Incluye posiciones clave y ejercicios.
+            </p>
+            <a href="#" class="article-card__link text-gold">Leer artículo</a>
+          </div>
+        </article>
+
+        <!-- Article 2 -->
+        <article class="article-card">
+          <div class="article-card__thumb" aria-hidden="true">♝</div>
+          <div class="article-card__body">
+            <div class="article-card__meta">
+              <span class="article-card__tag">Aperturas</span>
+              <span>Marzo 2025</span>
+            </div>
+            <h2 class="article-card__title">La Defensa Siciliana para jugadores de club</h2>
+            <p class="article-card__excerpt">
+              Guía práctica para iniciarse en la Siciliana: variantes sólidas, ideas clave y trampas que debes conocer antes de jugarla contra cualquier rival.
+            </p>
+            <a href="#" class="article-card__link text-gold">Leer artículo</a>
+          </div>
+        </article>
+
+        <!-- Article 3 -->
+        <article class="article-card">
+          <div class="article-card__thumb" aria-hidden="true">♛</div>
+          <div class="article-card__body">
+            <div class="article-card__meta">
+              <span class="article-card__tag">Cultura</span>
+              <span>Febrero 2025</span>
+            </div>
+            <h2 class="article-card__title">Por qué el ajedrez transforma a los niños</h2>
+            <p class="article-card__excerpt">
+              Revisamos la evidencia sobre los beneficios cognitivos del ajedrez en la infancia y cómo la academia trabaja con escuelas y familias para integrarlo.
+            </p>
+            <a href="#" class="article-card__link text-gold">Leer artículo</a>
+          </div>
+        </article>
+
+        <!-- Article 4 -->
+        <article class="article-card">
+          <div class="article-card__thumb" aria-hidden="true">♟</div>
+          <div class="article-card__body">
+            <div class="article-card__meta">
+              <span class="article-card__tag">Finales</span>
+              <span>Enero 2025</span>
+            </div>
+            <h2 class="article-card__title">Finales de torres: técnica esencial</h2>
+            <p class="article-card__excerpt">
+              La posición de Lucena, la defensa de Philidor y la regla del cuadrado explicadas con claridad. Dominar estos finales te dará puntos inmediatos en tus torneos.
+            </p>
+            <a href="#" class="article-card__link text-gold">Leer artículo</a>
+          </div>
+        </article>
+
+        <!-- Article 5 -->
+        <article class="article-card">
+          <div class="article-card__thumb" aria-hidden="true">♞</div>
+          <div class="article-card__body">
+            <div class="article-card__meta">
+              <span class="article-card__tag">Estrategia</span>
+              <span>Diciembre 2024</span>
+            </div>
+            <h2 class="article-card__title">El caballo vs el alfil: ¿cuándo es mejor cada uno?</h2>
+            <p class="article-card__excerpt">
+              Explicamos los factores que determinan cuándo el caballo supera al alfil y viceversa. Posiciones concretas con análisis profundo.
+            </p>
+            <a href="#" class="article-card__link text-gold">Leer artículo</a>
+          </div>
+        </article>
+
+        <!-- Article 6 — Placeholder for future content -->
+        <article class="article-card" style="border-style:dashed; opacity:0.6;">
+          <div class="article-card__thumb" aria-hidden="true" style="font-size:2rem;">✏️</div>
+          <div class="article-card__body">
+            <div class="article-card__meta">
+              <span class="article-card__tag">Próximo</span>
+            </div>
+            <h2 class="article-card__title">Próximos artículos en preparación</h2>
+            <p class="article-card__excerpt">
+              Más análisis, repertorios comentados y guías para padres y educadores. ¡Síguenos en Facebook para no perderte nada!
+            </p>
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="article-card__link text-gold">Seguir en Facebook</a>
+          </div>
+        </article>
+
+      </div><!-- end grid-3 -->
+    </div>
+  </section>
+
+  <!-- ===================== CTA ===================== -->
+  <section class="cta-section" aria-labelledby="cta-blog-heading">
+    <div class="container">
+      <h2 id="cta-blog-heading" data-i18n="cta.title">¡Únete a nuestra comunidad!</h2>
+      <p data-i18n="cta.subtitle">Síguenos en Facebook para recibir las últimas publicaciones, partidas y noticias de la academia.</p>
+      <div class="cta-actions">
+        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="btn btn--facebook" data-i18n="cta.facebook">Seguir en Facebook</a>
+        <button class="btn btn--outline" data-action="notify" data-i18n="cta.notify">Avísame cuando llegue la membresía</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand"><span aria-hidden="true">♛</span> Cuba Nica <span>Chess</span></div>
+          <p class="footer__tagline" data-i18n="footer.tagline">Escuela virtual de ajedrez para toda la comunidad hispanohablante.</p>
+        </div>
+        <div>
+          <div class="footer__heading" data-i18n="footer.nav">Navegación</div>
+          <ul class="footer__links" role="list">
+            <li><a href="index.html"        data-i18n="nav.home">Inicio</a></li>
+            <li><a href="blog.html"         data-i18n="nav.blog">Blog</a></li>
+            <li><a href="repertoires.html"  data-i18n="nav.repertoires">Repertorios</a></li>
+            <li><a href="exercises.html"    data-i18n="nav.exercises">Ejercicios</a></li>
+            <li><a href="about.html"        data-i18n="nav.about">Nosotros</a></li>
+            <li><a href="contact.html"      data-i18n="nav.contact">Contacto</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer__heading" data-i18n="footer.social">Redes</div>
+          <ul class="footer__links" role="list">
+            <li><a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy" data-i18n="footer.copy">© 2025 Cuba Nica Chess Academy. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
