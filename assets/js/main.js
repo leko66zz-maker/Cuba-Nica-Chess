@@ -380,6 +380,7 @@ function initMobileNav() {
   document.addEventListener('click', e => {
     if (!toggle.contains(e.target) && !navLinks.contains(e.target)) {
       navLinks.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
     }
   });
 
