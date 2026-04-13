@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contacto - Cuba Nica Chess Academy">
+  <title>Contacto - Cuba Nica Chess Academy</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <!-- Header & Navigation -->
+  <header>
+    <div class="header-container">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">♚</span>
+        <div>
+          <div>Cuba Nica Chess Academy</div>
+          <div class="tagline">Disciplina hoy. Fuerza mañana.</div>
+        </div>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="articles.html">Artículos</a></li>
+          <li><a href="repertoires.html">Repertorios</a></li>
+          <li><a href="training.html">Entrenamiento</a></li>
+          <li><a href="train-with-ai.html">IA</a></li>
+          <li><a href="about.html">Acerca de</a></li>
+          <li><a href="contact.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <div class="container">
+      <section>
+        <h1 style="color: #ffd700; text-align: center; margin-bottom: 1rem;">Contacta con Nosotros</h1>
+        <p style="text-align: center; margin-bottom: 2rem;">
+          Nos encantaría escucharte. Envía tus preguntas, sugerencias o propuestas de colaboración.
+        </p>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; max-width: 900px; margin: 0 auto;">
+          <!-- Formulario de Contacto -->
+          <div>
+            <h2 style="font-size: 1.5rem; margin-top: 0;">📧 Envía un Mensaje</h2>
+            <form id="contact-form" onsubmit="handleFormSubmit(event)">
+              <div class="form-group">
+                <label for="name">Nombre</label>
+                <input type="text" id="name" name="name" required>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+              </div>
+
+              <div class="form-group">
+                <label for="subject">Asunto</label>
+                <input type="text" id="subject" name="subject" required>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Mensaje</label>
+                <textarea id="message" name="message" required></textarea>
+              </div>
+
+              <button type="submit" class="btn" style="width: 100%; cursor: pointer;">Enviar Mensaje</button>
+              <p style="font-size: 0.85rem; color: #999; margin-top: 1rem; text-align: center;">
+                * Tu mensaje será recibido por nuestro equipo
+              </p>
+            </form>
+          </div>
+
+          <!-- Información de Contacto -->
+          <div>
+            <h2 style="font-size: 1.5rem; margin-top: 0;">📍 Información de Contacto</h2>
+            
+            <div style="background-color: #16213e; padding: 2rem; border-radius: 8px; border-left: 4px solid #e94560;">
+              <h4 style="color: #ffd700; margin-top: 0;">Síguenos en Redes Sociales</h4>
+              <div style="margin: 1.5rem 0;">
+                <p style="margin-bottom: 0.5rem;">
+                  <strong>Facebook</strong>
+                </p>
+                <a href="https://www.facebook.com" target="_blank" class="btn btn-secondary" style="display: inline-block;">
+                  Visita Facebook
+                </a>
+              </div>
+
+              <div style="margin: 1.5rem 0;">
+                <p style="margin-bottom: 0.5rem;">
+                  <strong>Comunidad</strong>
+                </p>
+                <p style="color: #d4d4d4;">
+                  Próximamente: Discord, Telegram y otros canales de comunicación comunitaria.
+                </p>
+              </div>
+
+              <div style="margin: 1.5rem 0;">
+                <p style="margin-bottom: 0.5rem;">
+                  <strong>Email</strong>
+                </p>
+                <p style="color: #d4d4d4;">
+                  <em>Próximamente: Dirección de email de soporte</em>
+                </p>
+              </div>
+            </div>
+
+            <div style="background-color: #16213e; padding: 2rem; border-radius: 8px; margin-top: 1.5rem; border-left: 4px solid #ffd700;">
+              <h4 style="color: #ffd700; margin-top: 0;">💡 Horario de Respuesta</h4>
+              <p>
+                Respondemos preguntas y consultas dentro de <strong>24-48 horas</strong> durante días de la semana.
+              </p>
+              <p style="margin-bottom: 0;">
+                Para soporte técnico urgente, etiqueta tu correo con [URGENTE] en el asunto.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Preguntas Frecuentes -->
+        <section style="margin-top: 3rem;">
+          <h2>❓ Preguntas Frecuentes</h2>
+          
+          <div style="background-color: #16213e; padding: 2rem; border-radius: 8px; margin-bottom: 1rem;">
+            <h4 style="color: #ffd700; margin-top: 0;">¿Cómo puedo empezar a aprender en la Academia?</h4>
+            <p>
+              ¡Simplemente comienza! Todos nuestros recursos están disponibles de forma gratuita. Explora artículos, repertorios y ejercicios de entrenamiento en tu propio ritmo.
+            </p>
+          </div>
+
+          <div style="background-color: #16213e; padding: 2rem; border-radius: 8px; margin-bottom: 1rem;">
+            <h4 style="color: #ffd700; margin-top: 0;">¿Hay opciones de mentoría personalizada?</h4>
+            <p>
+              Actualmente los recursos son de autoestudio. Estamos desarrollando opciones de coaching personalizado para Phase 2. Contacta si tienes interés en mentoría.
+            </p>
+          </div>
+
+          <div style="background-color: #16213e; padding: 2rem; border-radius: 8px; margin-bottom: 1rem;">
+            <h4 style="color: #ffd700; margin-top: 0;">¿Puedo usar los contenidos para enseñar?</h4>
+            <p>
+              Sí, pero con atribución. Si eres educador y deseas utilizar nuestros materiales, contacta para discutir términos de uso y licencia.
+            </p>
+          </div>
+
+          <div style="background-color: #16213e; padding: 2rem; border-radius: 8px; margin-bottom: 1rem;">
+            <h4 style="color: #ffd700; margin-top: 0;">¿Cuándo estará disponible la integración con Lichess?</h4>
+            <p>
+              La integración con Lichess está planificada para Phase 2. Suscríbete para recibir notificaciones cuando esté lista. Estamos emocionados de traer puzzles interactivos.
+            </p>
+          </div>
+
+          <div style="background-color: #16213e; padding: 2rem; border-radius: 8px;">
+            <h4 style="color: #ffd700; margin-top: 0;">¿Cómo puedo reportar un problema o error?</h4>
+            <p>
+              Usa el formulario anterior y especifica el problema detalladamente. También puedes reportar en Facebook. Agradecemos tu ayuda para mejorar.
+            </p>
+          </div>
+        </section>
+
+        <!-- Colaboraciones -->
+        <section style="margin-top: 3rem; text-align: center;">
+          <h2>🤝 Interesado en Colaborar?</h2>
+          <p>
+            Si eres maestro de ajedrez, educador, desarrollador o tienes ideas para mejorar la Academia, ¡nos encantaría escucharte!
+          </p>
+          <p>
+            Mencionalo en tu mensaje y te contactaremos para discutir posibilidades de colaboración.
+          </p>
+          <a href="#contact-form" class="btn">Enviar Propuesta de Colaboración</a>
+        </section>
+
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2026 Cuba Nica Chess Academy. Todos los derechos reservados.</p>
+      <div class="social-links">
+        <a href="https://www.facebook.com" target="_blank">Facebook</a>
+        <a href="contact.html">Contacto</a>
+        <a href="about.html">Acerca de Nosotros</a>
+      </div>
+      <p style="font-size: 0.85rem; margin-top: 1rem;">Disciplina hoy. Fuerza mañana.</p>
+    </div>
+  </footer>
+
+  <script>
+    function handleFormSubmit(event) {
+      event.preventDefault();
+      
+      // Get form data
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const subject = document.getElementById('subject').value;
+      const message = document.getElementById('message').value;
+      
+      // Log to console (in real implementation, this would be sent to a backend)
+      console.log('Contacto enviado:', { name, email, subject, message });
+      
+      // Show confirmation message
+      alert('¡Gracias por tu mensaje! Te responderemos pronto.');
+      
+      // Reset form
+      document.getElementById('contact-form').reset();
+      
+      // TODO: In Phase 2, integrate with backend API to actually send emails
+      // Example: POST to /api/contact with the form data
+    }
+  </script>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
