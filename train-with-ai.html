@@ -323,8 +323,8 @@
       var fen = game.fen();
       fetch('https://lichess.org/api/cloud-eval?fen=' + encodeURIComponent(fen) + '&multiPv=3')
         .then(function(res) {
-          if (res.status === 404) throw new Error('not_found');
-          if (!res.ok)           throw new Error('api_error');
+          if (res.status === 404) throw new Error('Position not found in Lichess cloud database');
+          if (!res.ok)           throw new Error('Lichess API error: ' + res.status);
           return res.json();
         })
         .then(function(data) { renderAnalysis(data, fen); })
@@ -365,7 +365,7 @@
     }
 
     function formatEval(pv) {
-      if (pv.mate !== undefined) return (pv.mate > 0 ? '#' : '#') + pv.mate;
+      if (pv.mate !== undefined) return pv.mate > 0 ? '#' + pv.mate : '-#' + Math.abs(pv.mate);
       var cp = pv.cp / 100;
       return cp >= 0 ? '+' + cp.toFixed(2) : cp.toFixed(2);
     }
@@ -397,7 +397,7 @@
       var san   = [];
       for (var i = 0; i < parts.length; i++) {
         var u = parts[i];
-        var m = tmp.move({ from: u.slice(0, 2), to: u.slice(2, 4), promotion: u[4] || undefined });
+        var m = tmp.move({ from: u.slice(0, 2), to: u.slice(2, 4), promotion: u.length === 5 ? u[4] : undefined });
         if (!m) break;
         san.push(m.san);
       }
@@ -438,7 +438,7 @@
       if (game.game_over()) return;
       $('#analysisStatus').html('⏳ Buscando mejor jugada…');
       fetch('https://lichess.org/api/cloud-eval?fen=' + encodeURIComponent(fen) + '&multiPv=1')
-        .then(function(res) { if (!res.ok) throw new Error(); return res.json(); })
+        .then(function(res) { if (!res.ok) throw new Error('Lichess API error: ' + res.status); return res.json(); })
         .then(function(data) {
           if (!data.pvs || !data.pvs[0] || !data.pvs[0].moves) return;
           var uci  = data.pvs[0].moves.split(' ')[0];

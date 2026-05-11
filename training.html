@@ -301,7 +301,7 @@
       var tmp = new Chess(fen), parts = uciString.split(' ').slice(0, maxMoves), san = [];
       for (var i = 0; i < parts.length; i++) {
         var u = parts[i];
-        var m = tmp.move({ from: u.slice(0,2), to: u.slice(2,4), promotion: u[4]||undefined });
+        var m = tmp.move({ from: u.slice(0,2), to: u.slice(2,4), promotion: u.length === 5 ? u[4] : undefined });
         if (!m) break;
         san.push(m.san);
       }
@@ -310,10 +310,9 @@
 
     function loadDailyPuzzle() {
       fetch('https://lichess.org/api/puzzle/daily')
-        .then(function(r) { if (!r.ok) throw new Error(); return r.json(); })
+        .then(function(r) { if (!r.ok) throw new Error('Failed to fetch daily puzzle: ' + r.status); return r.json(); })
         .then(function(data) {
-          var p   = data.puzzle;
-          var g   = data.game;
+          var p = data.puzzle;
           puzzleId = p.id;
 
           // Determine puzzle orientation from whose turn it is in the puzzle FEN
@@ -353,13 +352,13 @@
       $('#puzzleAnalysisStatus').html('⏳ Consultando Stockfish…');
       $('#puzzleEngineLines').html('');
       fetch('https://lichess.org/api/cloud-eval?fen=' + encodeURIComponent(fen) + '&multiPv=3')
-        .then(function(r) { if (!r.ok) throw new Error(); return r.json(); })
+        .then(function(r) { if (!r.ok) throw new Error('Failed to fetch Stockfish analysis: ' + r.status); return r.json(); })
         .then(function(data) {
           var pvs = data.pvs || [];
           if (!pvs.length) { $('#puzzleAnalysisStatus').text('Sin datos.'); return; }
           var top = pvs[0];
           var evalStr = top.mate !== undefined
-            ? '#' + top.mate
+            ? (top.mate > 0 ? '#' + top.mate : '-#' + Math.abs(top.mate))
             : (top.cp >= 0 ? '+' : '') + (top.cp / 100).toFixed(2);
           $('#puzzleAnalysisStatus').html(
             'Evaluación: <strong style="color:var(--gold-color)">' + evalStr + '</strong> · Prof. ' + data.depth
@@ -367,7 +366,7 @@
           setPuzzleEvalBar(top.cp, top.mate);
           var html = '';
           pvs.forEach(function(pv) {
-            var eStr = pv.mate !== undefined ? '#' + pv.mate : (pv.cp >= 0 ? '+' : '') + (pv.cp / 100).toFixed(2);
+            var eStr = pv.mate !== undefined ? (pv.mate > 0 ? '#' + pv.mate : '-#' + Math.abs(pv.mate)) : (pv.cp >= 0 ? '+' : '') + (pv.cp / 100).toFixed(2);
             var san  = pv.moves ? uciLineSan(fen, pv.moves, 5) : '';
             html += '<div class="engine-line"><span class="line-eval">' + eStr + '</span><span class="line-moves">' + san + (pv.moves && pv.moves.split(' ').length > 5 ? '…' : '') + '</span></div>';
           });
