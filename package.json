@@ -1,0 +1,34 @@
+{
+  "name": "cuba-nica-chess",
+  "version": "1.0.0",
+  "description": "**Escuela Virtual de Ajedrez | Virtual Chess School**",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "testMatch": [
+      "**/tests/**/*.test.js"
+    ],
+    "collectCoverageFrom": [
+      "assets/js/**/*.js"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leko66zz-maker/Cuba-Nica-Chess.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/leko66zz-maker/Cuba-Nica-Chess/issues"
+  },
+  "homepage": "https://github.com/leko66zz-maker/Cuba-Nica-Chess#readme",
+  "devDependencies": {
+    "jest": "^30.4.2",
+    "jest-environment-jsdom": "^30.4.1"
+  }
+}

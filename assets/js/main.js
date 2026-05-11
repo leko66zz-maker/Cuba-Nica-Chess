@@ -3,17 +3,20 @@
    =================================== */
 
 // Active navigation link highlighting
-document.addEventListener('DOMContentLoaded', function () {
+function highlightActiveNavLink(pathname) {
   const navLinks = document.querySelectorAll('nav a');
-  
-  // Get current page filename
-  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-  
+
+  // Get current page filename (use provided pathname in tests, or window.location)
+  const rawPath = pathname !== undefined ? pathname : window.location.pathname;
+  const pageName = rawPath.split('/').pop();  // '' when on root
+  const currentPage = pageName || 'index.html';
+  const isRoot = pageName === '';
+
   navLinks.forEach(link => {
     const href = link.getAttribute('href');
-    
-    // Handle index.html and root path
-    if ((currentPage === '' || currentPage === '/') && (href === 'index.html' || href === '/')) {
+
+    // Handle index.html and "/" links when on the root path
+    if (isRoot && (href === 'index.html' || href === '/')) {
       link.classList.add('active');
     } else if (href === currentPage) {
       link.classList.add('active');
@@ -21,7 +24,9 @@ document.addEventListener('DOMContentLoaded', function () {
       link.classList.remove('active');
     }
   });
-});
+}
+
+document.addEventListener('DOMContentLoaded', () => highlightActiveNavLink());
 
 // Mobile menu toggle (if needed in future)
 function toggleMobileMenu() {
@@ -34,9 +39,9 @@ function toggleMobileMenu() {
 }
 
 // Smooth scroll for anchors
-document.addEventListener('DOMContentLoaded', function () {
+function initSmoothScroll() {
   const links = document.querySelectorAll('a[href^="#"]');
-  
+
   links.forEach(link => {
     link.addEventListener('click', function (e) {
       const href = this.getAttribute('href');
@@ -52,7 +57,9 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
   });
-});
+}
+
+document.addEventListener('DOMContentLoaded', initSmoothScroll);
 
 // Future Lichess integration - placeholder
 // This section will be expanded to integrate with Lichess API
@@ -79,3 +86,15 @@ window.addEventListener('load', function () {
   // Active link highlighting is already done in DOMContentLoaded
   // Other initialization code can go here
 });
+
+// Export functions for testing (CommonJS / Jest)
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = {
+    highlightActiveNavLink,
+    initSmoothScroll,
+    toggleMobileMenu,
+    initLichessIntegration,
+    initAIChat,
+    trackPageView,
+  };
+}
