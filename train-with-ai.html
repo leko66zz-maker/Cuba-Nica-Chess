@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Entrenamiento con IA - Cuba Nica Chess Academy">
+  <meta name="description" content="Tablero interactivo con análisis Stockfish via Lichess - Cuba Nica Chess Academy">
   <title>Entrenamiento con IA - Cuba Nica Chess Academy</title>
   <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.css">
 </head>
 <body>
   <!-- Header & Navigation -->
@@ -36,91 +37,134 @@
   <main>
     <div class="container">
       <section>
-        <h1 style="color: #ffd700; text-align: center; margin-bottom: 2rem;">Entrenamiento con Inteligencia Artificial</h1>
+        <h1 style="color:#ffd700;text-align:center;margin-bottom:0.4rem;">Tablero Interactivo con Stockfish</h1>
+        <p style="text-align:center;margin-bottom:2rem;">
+          Analiza posiciones con el motor <strong style="color:#ffd700;">Stockfish</strong> a través de la nube de
+          <strong style="color:#ffd700;">Lichess.org</strong> — código abierto. Arrastra las piezas para jugar.
+        </p>
 
-        <!-- Main Placeholder -->
-        <div class="placeholder" style="padding: 4rem 2rem; text-align: center; border: 3px dashed #ffd700;">
-          <div style="font-size: 4rem; margin-bottom: 1rem;">🤖</div>
-          <h2 style="color: #ffd700; margin: 0 0 1rem 0;">Próximamente: Coach de IA Personalizado</h2>
-          <p style="font-size: 1.2rem; margin-bottom: 1rem;">
-            Estamos desarrollando un sistema avanzado de Inteligencia Artificial para tu entrenamiento personalizado.
-          </p>
-          <p style="color: #e94560; font-weight: bold; font-size: 1.1rem;">
-            ⏰ Disponible en Phase 2 (Próximamente)
-          </p>
+        <!-- ═══ INTERACTIVE BOARD ═══ -->
+        <div class="board-section">
+          <div class="board-layout">
+
+            <!-- Left: Eval bar + Board -->
+            <div>
+              <div class="board-with-eval">
+                <!-- Eval Bar -->
+                <div class="eval-bar-container">
+                  <span class="eval-score-label" id="evalTop"></span>
+                  <div class="eval-bar">
+                    <div class="eval-bar-black" id="evalBarBlack" style="height:50%"></div>
+                    <div class="eval-bar-white" id="evalBarWhite" style="height:50%"></div>
+                  </div>
+                  <span class="eval-score-label" id="evalBottom"></span>
+                </div>
+                <!-- Chess Board -->
+                <div id="chessboard"></div>
+              </div>
+
+              <!-- Controls -->
+              <div class="board-controls">
+                <button id="flipBtn" class="btn btn-sm">⟳ Voltear</button>
+                <button id="resetBtn" class="btn btn-sm">↺ Reiniciar</button>
+                <button id="undoBtn" class="btn btn-sm">← Deshacer</button>
+                <button id="bestMoveBtn" class="btn btn-sm btn-gold">💡 Mejor Jugada</button>
+                <a id="lichessLink" href="https://lichess.org/analysis" target="_blank" class="btn btn-sm" style="text-decoration:none;">🌐 Lichess</a>
+              </div>
+
+              <!-- FEN Input -->
+              <div class="fen-section">
+                <label>📌 Cargar posición (FEN):</label>
+                <div class="fen-input-row">
+                  <input type="text" id="fenInput" placeholder="Pega un FEN para cargar cualquier posición…">
+                  <button id="loadFenBtn" class="btn btn-sm">Cargar</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Analysis + History -->
+            <div class="board-right-panel">
+
+              <!-- Analysis -->
+              <div class="analysis-panel">
+                <h4>🔍 Análisis Stockfish (vía Lichess)</h4>
+                <p id="analysisStatus">Mueve una pieza para ver el análisis.</p>
+                <div id="engineLines"></div>
+              </div>
+
+              <!-- Move history -->
+              <div class="move-history-panel">
+                <h4>📋 Jugadas</h4>
+                <div id="moveHistory"><span style="color:#555">Posición inicial</span></div>
+                <div id="gameStatus" class="game-status"></div>
+              </div>
+
+              <!-- Info box -->
+              <div style="background:var(--primary-color);padding:1rem;border-radius:8px;border-left:3px solid var(--accent-color);font-size:0.83rem;color:#bbb;">
+                <strong style="color:var(--accent-color);">ℹ️ Cómo funciona</strong><br><br>
+                El análisis usa <strong style="color:#ffd700;">Stockfish</strong> ejecutándose en los servidores de
+                <strong style="color:#ffd700;">Lichess</strong> (código abierto). Para análisis profundo ilimitado
+                haz clic en <strong>🌐 Lichess</strong> — la posición actual se abrirá automáticamente.
+              </div>
+            </div>
+          </div>
         </div>
+        <!-- ═══ END BOARD ═══ -->
 
         <!-- What's Coming -->
-        <section style="margin-top: 3rem;">
-          <h2>🚀 ¿Qué Traerá la IA?</h2>
-          
+        <section style="margin-top:3rem;">
+          <h2>🚀 Próximas Funcionalidades de IA</h2>
+
           <div class="card-grid">
             <div class="card">
               <h3>🎯 Análisis Personalizado</h3>
-              <p>
-                La IA analizará tus fortalezas y debilidades específicas, creando un plan de entrenamiento completamente personalizado para ti.
-              </p>
-              <ul style="margin-left: 1rem; font-size: 0.95rem;">
+              <p>La IA identificará tus debilidades específicas y creará un plan de entrenamiento adaptativo.</p>
+              <ul style="margin-left:1rem;font-size:0.92rem;">
                 <li>→ Evaluación de nivel actual</li>
                 <li>→ Plan de mejora adaptativo</li>
                 <li>→ Seguimiento de progreso</li>
               </ul>
             </div>
-
             <div class="card">
               <h3>🧠 Coach Inteligente</h3>
-              <p>
-                Un coach virtual disponible 24/7 para responder preguntas sobre ajedrez, explicar conceptos y proporcionar feedback en tiempo real.
-              </p>
-              <ul style="margin-left: 1rem; font-size: 0.95rem;">
+              <p>Coach virtual disponible 24/7 para explicar conceptos y dar retroalimentación en tiempo real.</p>
+              <ul style="margin-left:1rem;font-size:0.92rem;">
                 <li>→ Chat conversacional</li>
                 <li>→ Recomendaciones contextuales</li>
-                <li>→ Respuestas basadas en tu nivel</li>
+                <li>→ Respuestas según tu nivel</li>
               </ul>
             </div>
-
             <div class="card">
-              <h3>📊 Análisis de Partidas</h3>
-              <p>
-                Carga tus partidas (PGN) y déjale a la IA analizarlas automáticamente. Recibirás explicaciones de errores y sugerencias de mejora.
-              </p>
-              <ul style="margin-left: 1rem; font-size: 0.95rem;">
+              <h3>📊 Análisis de Partidas PGN</h3>
+              <p>Carga tus partidas y recibe explicaciones de errores con sugerencias de mejora automáticas.</p>
+              <ul style="margin-left:1rem;font-size:0.92rem;">
                 <li>→ Análisis automático</li>
                 <li>→ Identificación de errores clave</li>
                 <li>→ Sugerencias alternativas</li>
               </ul>
             </div>
-
             <div class="card">
               <h3>🎮 Juego Adaptativo</h3>
-              <p>
-                Un motor de ajedrez que se adapta a tu nivel y aprende de tu estilo de juego. Juega contra la IA y mejora gradualmente.
-              </p>
-              <ul style="margin-left: 1rem; font-size: 0.95rem;">
-                <li>→ Niveles de dificultad dinámicos</li>
+              <p>Un motor que se adapta a tu nivel y aprende de tu estilo. Juega y mejora gradualmente.</p>
+              <ul style="margin-left:1rem;font-size:0.92rem;">
+                <li>→ Niveles dinámicos</li>
                 <li>→ Análisis post-partida</li>
                 <li>→ Desafíos personalizados</li>
               </ul>
             </div>
-
             <div class="card">
               <h3>📚 Recomendaciones</h3>
-              <p>
-                La IA sugerirá artículos, ejercicios y repertorios basados en lo que necesitas mejorar.
-              </p>
-              <ul style="margin-left: 1rem; font-size: 0.95rem;">
+              <p>La IA sugerirá artículos, ejercicios y repertorios basados en lo que necesitas mejorar.</p>
+              <ul style="margin-left:1rem;font-size:0.92rem;">
                 <li>→ Contenido sugerido</li>
                 <li>→ Ejercicios relevantes</li>
                 <li>→ Materiales de estudio</li>
               </ul>
             </div>
-
             <div class="card">
               <h3>🏆 Seguimiento de Objetivos</h3>
-              <p>
-                Define objetivos (mejorar rating, dominar una apertura, etc.) y la IA te ayudará a alcanzarlos con un plan estructurado.
-              </p>
-              <ul style="margin-left: 1rem; font-size: 0.95rem;">
+              <p>Define objetivos y la IA te ayudará a alcanzarlos con un plan estructurado.</p>
+              <ul style="margin-left:1rem;font-size:0.92rem;">
                 <li>→ Objetivos personalizados</li>
                 <li>→ Planes de entrenamiento</li>
                 <li>→ Hitos y celebraciones</li>
@@ -129,88 +173,39 @@
           </div>
         </section>
 
-        <!-- Technology Stack -->
-        <section style="margin-top: 3rem;">
-          <h2>⚙️ Tecnología Utilizada</h2>
-          <div style="background-color: #16213e; padding: 2rem; border-radius: 8px; border-left: 4px solid #e94560;">
-            <p style="margin-top: 0;">
-              Nuestra solución de IA estará construida sobre:
-            </p>
-            <ul style="margin-left: 2rem;">
-              <li><strong>Procesamiento de Lenguaje Natural (NLP):</strong> Para entender preguntas de ajedrez en lenguaje natural</li>
-              <li><strong>Análisis de Ajedrez:</strong> Integración con motores de ajedrez (Stockfish, Chess.js)</li>
-              <li><strong>Machine Learning:</strong> Modelos entrenados con millones de partidas para análisis y recomendaciones</li>
-              <li><strong>APIs de IA:</strong> Potencia de modelos de lenguaje de última generación</li>
-              <li><strong>Backend Escalable:</strong> Servidores capaces de manejar múltiples usuarios simultáneamente</li>
-            </ul>
-          </div>
-        </section>
-
         <!-- Timeline -->
-        <section style="margin-top: 3rem;">
-          <h2>📅 Cronograma de Implementación</h2>
-          
-          <div style="max-width: 600px; margin: 0 auto;">
-            <div style="background-color: #16213e; padding: 1.5rem; margin-bottom: 1rem; border-left: 4px solid #ffd700; border-radius: 4px;">
-              <h4 style="color: #ffd700; margin-top: 0;">Phase 1: Actual (Marzo - Abril 2026)</h4>
-              <p style="margin-bottom: 0;">✅ Plataforma base, contenido, recursos de entrenamiento</p>
+        <section style="margin-top:3rem;">
+          <h2>📅 Cronograma</h2>
+          <div style="max-width:600px;margin:0 auto;">
+            <div style="background:var(--secondary-color);padding:1.5rem;margin-bottom:1rem;border-left:4px solid var(--gold-color);border-radius:4px;">
+              <h4 style="color:var(--gold-color);margin-top:0;">✅ Phase 1 (Activa)</h4>
+              <p style="margin:0;">Plataforma base + tablero interactivo con Stockfish via Lichess</p>
             </div>
-
-            <div style="background-color: #16213e; padding: 1.5rem; margin-bottom: 1rem; border-left: 4px solid #e94560; border-radius: 4px;">
-              <h4 style="color: #e94560; margin-top: 0;">Phase 2: Q2-Q3 2026</h4>
-              <ul style="margin: 0 0 0 1rem;">
-                <li>Integración Lichess</li>
-                <li>API de análisis básica</li>
-                <li>Primeras características de coach de IA</li>
+            <div style="background:var(--secondary-color);padding:1.5rem;margin-bottom:1rem;border-left:4px solid var(--accent-color);border-radius:4px;">
+              <h4 style="color:var(--accent-color);margin-top:0;">Phase 2: Q2–Q3 2026</h4>
+              <ul style="margin:0 0 0 1rem;">
+                <li>Puzzles interactivos integrados</li>
+                <li>Análisis de partidas PGN</li>
+                <li>Primeras funciones del coach de IA</li>
               </ul>
             </div>
-
-            <div style="background-color: #16213e; padding: 1.5rem; margin-bottom: 1rem; border-left: 4px solid #ffd700; border-radius: 4px;">
-              <h4 style="color: #ffd700; margin-top: 0;">Phase 3: Q4 2026</h4>
-              <ul style="margin: 0 0 0 1rem;">
+            <div style="background:var(--secondary-color);padding:1.5rem;border-left:4px solid var(--gold-color);border-radius:4px;">
+              <h4 style="color:var(--gold-color);margin-top:0;">Phase 3: Q4 2026+</h4>
+              <ul style="margin:0 0 0 1rem;">
                 <li>Coach de IA completo</li>
-                <li>Motor de ajedrez adaptativo</li>
                 <li>Sistema de recomendaciones</li>
-              </ul>
-            </div>
-
-            <div style="background-color: #16213e; padding: 1.5rem; border-left: 4px solid #e94560; border-radius: 4px;">
-              <h4 style="color: #e94560; margin-top: 0;">Phase 4: 2027+</h4>
-              <ul style="margin: 0 0 0 1rem;">
-                <li>Comunidad integrada</li>
-                <li>Torneos en línea</li>
-                <li>Mentorría humana asistida por IA</li>
+                <li>Comunidad y torneos</li>
               </ul>
             </div>
           </div>
         </section>
 
-        <!-- Updates -->
-        <section style="margin-top: 3rem; text-align: center;">
+        <section style="margin-top:3rem;text-align:center;">
           <h2>📬 Manténte Informado</h2>
-          <p>
-            Síguenos en <a href="https://www.facebook.com" target="_blank" style="color: #ffd700; text-decoration: underline;">Facebook</a> 
-            para recibir actualizaciones sobre el desarrollo de nuestro sistema de IA.
-          </p>
-          <p>
-            También puedes <a href="contact.html" style="color: #ffd700; text-decoration: underline;">contactarnos</a> si tienes sugerencias o ideas 
-            sobre características que te gustaría ver.
-          </p>
-          <a href="contact.html" class="btn" style="margin-top: 1rem;">Expresar Interés</a>
+          <p>Síguenos en <a href="https://www.facebook.com" target="_blank" style="color:var(--gold-color);text-decoration:underline;">Facebook</a>
+             para recibir actualizaciones sobre el desarrollo del sistema de IA.</p>
+          <a href="contact.html" class="btn" style="margin-top:1rem;">Expresar Interés</a>
         </section>
-
-        <!-- Early Access -->
-        <div class="placeholder" style="margin-top: 3rem; background-color: #1a1a2e; border-color: #ffd700;">
-          <h3 style="color: #ffd700; margin-top: 0;">🎁 Acceso Temprano</h3>
-          <p>
-            ¿Interesado en ser uno de los primeros en probar el sistema de IA cuando esté listo?
-          </p>
-          <p>
-            Déjanos saber en el <a href="contact.html" style="color: #ffd700; text-decoration: underline;">formulario de contacto</a> 
-            y te notificaremos cuando esté disponible la beta.
-          </p>
-        </div>
-
       </section>
     </div>
   </main>
@@ -224,10 +219,275 @@
         <a href="contact.html">Contacto</a>
         <a href="about.html">Acerca de Nosotros</a>
       </div>
-      <p style="font-size: 0.85rem; margin-top: 1rem;">Disciplina hoy. Fuerza mañana.</p>
+      <p style="font-size:0.85rem;margin-top:1rem;">Disciplina hoy. Fuerza mañana.</p>
     </div>
   </footer>
 
+  <!-- Dependencies -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.3/chess.min.js"></script>
   <script src="assets/js/main.js"></script>
+  <script>
+    /* ============================================================
+       Cuba Nica Chess Academy — Interactive Board with Stockfish
+       Analysis via Lichess Cloud Eval API (open-source, no key needed)
+    ============================================================ */
+    var board = null;
+    var game  = new Chess();
+    var analysisTimer = null;
+    var highlightTimers = [];
+
+    // ── Initialise board ──────────────────────────────────────
+    function initBoard() {
+      var cfg = {
+        draggable: true,
+        position: 'start',
+        onDragStart: onDragStart,
+        onDrop:      onDrop,
+        onSnapEnd:   onSnapEnd,
+        pieceTheme:  'https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/img/chesspieces/wikipedia/{piece}.png'
+      };
+      board = Chessboard('chessboard', cfg);
+      $(window).resize(board.resize);
+      updateUI();
+      updateLichessLink();
+    }
+
+    // ── Drag/drop handlers ────────────────────────────────────
+    function onDragStart(source, piece) {
+      if (game.game_over()) return false;
+      if (game.turn() === 'w' && piece.search(/^b/) !== -1) return false;
+      if (game.turn() === 'b' && piece.search(/^w/) !== -1) return false;
+    }
+
+    function onDrop(source, target) {
+      var move = game.move({ from: source, to: target, promotion: 'q' });
+      if (move === null) return 'snapback';
+      updateUI();
+      updateLichessLink();
+      scheduleAnalysis();
+    }
+
+    function onSnapEnd() {
+      board.position(game.fen());
+    }
+
+    // ── UI helpers ────────────────────────────────────────────
+    function updateUI() {
+      var hist = game.history();
+      if (hist.length === 0) {
+        $('#moveHistory').html('<span style="color:#555">Posición inicial</span>');
+      } else {
+        var html = '';
+        for (var i = 0; i < hist.length; i++) {
+          if (i % 2 === 0) html += '<span style="color:#666">' + (Math.floor(i / 2) + 1) + '.</span> ';
+          html += hist[i] + ' ';
+        }
+        $('#moveHistory').html(html);
+        var el = $('#moveHistory')[0];
+        el.scrollTop = el.scrollHeight;
+      }
+
+      var status = '';
+      if (game.in_checkmate()) {
+        status = (game.turn() === 'w' ? '⬛ Las Negras ganan' : '⬜ Las Blancas ganan') + ' — Jaque Mate';
+      } else if (game.in_draw()) {
+        status = '🤝 Tablas';
+      } else if (game.in_check()) {
+        status = (game.turn() === 'w' ? '⬜ Blancas' : '⬛ Negras') + ' en jaque ⚠️';
+      }
+      $('#gameStatus').text(status);
+    }
+
+    function updateLichessLink() {
+      $('#lichessLink').attr('href', 'https://lichess.org/analysis/' + encodeURIComponent(game.fen()));
+    }
+
+    // ── Stockfish analysis via Lichess Cloud Eval ─────────────
+    function scheduleAnalysis() {
+      clearTimeout(analysisTimer);
+      analysisTimer = setTimeout(doAnalysis, 450);
+    }
+
+    function doAnalysis() {
+      if (game.game_over()) {
+        $('#analysisStatus').text('Partida terminada.');
+        $('#engineLines').html('');
+        setEvalBar(0, null);
+        return;
+      }
+      $('#analysisStatus').html('⏳ Consultando Stockfish…');
+      $('#engineLines').html('');
+
+      var fen = game.fen();
+      fetch('https://lichess.org/api/cloud-eval?fen=' + encodeURIComponent(fen) + '&multiPv=3')
+        .then(function(res) {
+          if (res.status === 404) throw new Error('Position not found in Lichess cloud database');
+          if (!res.ok)           throw new Error('Lichess API error: ' + res.status);
+          return res.json();
+        })
+        .then(function(data) { renderAnalysis(data, fen); })
+        .catch(function() {
+          $('#analysisStatus').html(
+            'Esta posición no está en la base de datos de Lichess. ' +
+            '<a href="' + 'https://lichess.org/analysis/' + encodeURIComponent(fen) +
+            '" target="_blank" style="color:var(--gold-color)">Análisis completo en Lichess →</a>'
+          );
+          setEvalBar(0, null);
+        });
+    }
+
+    function renderAnalysis(data, fen) {
+      var pvs = data.pvs;
+      if (!pvs || pvs.length === 0) {
+        $('#analysisStatus').text('Sin evaluación disponible.');
+        return;
+      }
+      var top = pvs[0];
+      var evalStr = formatEval(top);
+      $('#analysisStatus').html(
+        'Evaluación: <strong style="color:var(--gold-color)">' + evalStr + '</strong>' +
+        ' &nbsp;·&nbsp; Prof. ' + data.depth
+      );
+      setEvalBar(top.cp, top.mate);
+
+      var html = '';
+      pvs.forEach(function(pv) {
+        var san = pv.moves ? uciLineSan(fen, pv.moves, 5) : '';
+        var dots = pv.moves && pv.moves.split(' ').length > 5 ? '…' : '';
+        html += '<div class="engine-line">' +
+                '<span class="line-eval">' + formatEval(pv) + '</span>' +
+                '<span class="line-moves">' + san + dots + '</span>' +
+                '</div>';
+      });
+      $('#engineLines').html(html);
+    }
+
+    function formatEval(pv) {
+      if (pv.mate !== undefined) return pv.mate > 0 ? '#' + pv.mate : '-#' + Math.abs(pv.mate);
+      var cp = pv.cp / 100;
+      return cp >= 0 ? '+' + cp.toFixed(2) : cp.toFixed(2);
+    }
+
+    function setEvalBar(cp, mate) {
+      var whitePct = 50;
+      var topText = '', botText = '';
+      if (mate !== null && mate !== undefined) {
+        whitePct = mate > 0 ? 95 : 5;
+        if (mate > 0) { botText = '#' + mate; }
+        else          { topText = '#' + Math.abs(mate); }
+      } else if (cp !== null && cp !== undefined) {
+        var capped = Math.max(-600, Math.min(600, cp));
+        whitePct = 50 + (capped / 600) * 45;
+        var v = (cp / 100).toFixed(1);
+        if (cp >= 0) { botText = '+' + v; } else { topText = v; }
+      }
+      var blackPct = 100 - whitePct;
+      $('#evalBarBlack').css('height', blackPct + '%');
+      $('#evalBarWhite').css('height', whitePct + '%');
+      $('#evalTop').text(topText);
+      $('#evalBottom').text(botText);
+    }
+
+    // Convert UCI string to SAN (up to maxMoves half-moves)
+    function uciLineSan(fen, uciString, maxMoves) {
+      var tmp   = new Chess(fen);
+      var parts = uciString.split(' ').slice(0, maxMoves);
+      var san   = [];
+      for (var i = 0; i < parts.length; i++) {
+        var u = parts[i];
+        var m = tmp.move({ from: u.slice(0, 2), to: u.slice(2, 4), promotion: u.length === 5 ? u[4] : undefined });
+        if (!m) break;
+        san.push(m.san);
+      }
+      return san.join(' ');
+    }
+
+    // ── Control buttons ───────────────────────────────────────
+    $('#flipBtn').on('click', function() { board.flip(); });
+
+    $('#resetBtn').on('click', function() {
+      game.reset();
+      board.start();
+      clearTimeout(analysisTimer);
+      updateUI();
+      updateLichessLink();
+      $('#analysisStatus').text('Mueve una pieza para ver el análisis.');
+      $('#engineLines').html('');
+      setEvalBar(0, null);
+    });
+
+    $('#undoBtn').on('click', function() {
+      game.undo();
+      board.position(game.fen());
+      updateUI();
+      updateLichessLink();
+      if (game.history().length > 0) {
+        scheduleAnalysis();
+      } else {
+        clearTimeout(analysisTimer);
+        $('#analysisStatus').text('Mueve una pieza para ver el análisis.');
+        $('#engineLines').html('');
+        setEvalBar(0, null);
+      }
+    });
+
+    $('#bestMoveBtn').on('click', function() {
+      var fen = game.fen();
+      if (game.game_over()) return;
+      $('#analysisStatus').html('⏳ Buscando mejor jugada…');
+      fetch('https://lichess.org/api/cloud-eval?fen=' + encodeURIComponent(fen) + '&multiPv=1')
+        .then(function(res) { if (!res.ok) throw new Error('Lichess API error: ' + res.status); return res.json(); })
+        .then(function(data) {
+          if (!data.pvs || !data.pvs[0] || !data.pvs[0].moves) return;
+          var uci  = data.pvs[0].moves.split(' ')[0];
+          var from = uci.slice(0, 2);
+          var to   = uci.slice(2, 4);
+          var san  = uciLineSan(fen, uci, 1);
+
+          // Clear old highlights
+          highlightTimers.forEach(clearTimeout);
+          $('.highlight-sq-from, .highlight-sq-to').removeClass('highlight-sq-from highlight-sq-to');
+
+          $('[data-square="' + from + '"]').addClass('highlight-sq-from');
+          $('[data-square="' + to   + '"]').addClass('highlight-sq-to');
+          var t = setTimeout(function() {
+            $('.highlight-sq-from, .highlight-sq-to').removeClass('highlight-sq-from highlight-sq-to');
+          }, 2500);
+          highlightTimers = [t];
+
+          renderAnalysis(data, fen);
+          $('#analysisStatus').html(
+            'Mejor jugada: <strong style="color:var(--gold-color)">' + san + '</strong>'
+          );
+        })
+        .catch(function() {
+          $('#analysisStatus').html(
+            'No disponible en la nube. ' +
+            '<a href="https://lichess.org/analysis/' + encodeURIComponent(fen) +
+            '" target="_blank" style="color:var(--gold-color)">Ver en Lichess →</a>'
+          );
+        });
+    });
+
+    $('#loadFenBtn').on('click', loadFen);
+    $('#fenInput').on('keydown', function(e) { if (e.key === 'Enter') loadFen(); });
+
+    function loadFen() {
+      var fen = $('#fenInput').val().trim();
+      if (!fen) return;
+      var tmp = new Chess();
+      if (!tmp.load(fen)) { alert('FEN inválido. Por favor verifica el formato.'); return; }
+      game.load(fen);
+      board.position(fen);
+      updateUI();
+      updateLichessLink();
+      scheduleAnalysis();
+    }
+
+    // ── Boot ──────────────────────────────────────────────────
+    $(document).ready(function() { initBoard(); });
+  </script>
 </body>
 </html>

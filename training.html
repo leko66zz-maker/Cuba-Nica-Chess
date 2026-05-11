@@ -6,6 +6,7 @@
   <meta name="description" content="Entrenamiento interactivo - Cuba Nica Chess Academy">
   <title>Entrenamiento - Cuba Nica Chess Academy</title>
   <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.css">
 </head>
 <body>
   <!-- Header & Navigation -->
@@ -69,19 +70,42 @@
             </div>
           </div>
 
-          <!--  PLACEHOLDER: Lichess Puzzle Integration -->
-          <div class="placeholder" style="margin-top: 2rem;">
-            <h3>🔌 Integración Lichess - Puzzles Interactivos</h3>
-            <p>Próximamente: Puzzles de Lichess integrados directamente en la Academia.</p>
-            <p>Resuelve problemas tácticos reales con un tablero interactivo, feedback instantáneo y seguimiento de puntuación.</p>
-            <!-- HTML Comment for Phase 2 Development -->
-            <!-- FUTURE INTEGRATION: Lichess Puzzle API
-                 - Embed Lichess puzzle iframe: https://lichess.org/api/puzzle/daily
-                 - Track user puzzle ratings
-                 - Integrate puzzle search by difficulty
-                 - Store user statistics locally (localStorage) or sync with backend API (Phase 2)
-                 - Example: <iframe src="https://lichess.org/embed/puzzle/..."></iframe>
-            -->
+          <!-- Lichess Daily Puzzle with Interactive Board -->
+          <div class="board-section" style="margin-top:2rem;">
+            <h3 style="color:var(--gold-color);margin-top:0;">🧩 Puzzle del Día — Lichess</h3>
+            <p id="puzzleMeta" style="color:#aaa;font-size:0.9rem;margin-bottom:1rem;">Cargando puzzle…</p>
+
+            <div class="puzzle-board-wrap">
+              <!-- Eval bar -->
+              <div style="display:flex;flex-direction:column;align-items:center;gap:4px;">
+                <span style="font-size:0.7rem;color:#aaa;font-family:monospace;min-height:1em" id="pEvalTop"></span>
+                <div class="puzzle-eval-bar">
+                  <div class="puzzle-eval-black" id="pEvalBlack" style="height:50%"></div>
+                  <div class="puzzle-eval-white" id="pEvalWhite" style="height:50%"></div>
+                </div>
+                <span style="font-size:0.7rem;color:#aaa;font-family:monospace;min-height:1em" id="pEvalBottom"></span>
+              </div>
+              <!-- Board -->
+              <div id="puzzleBoard"></div>
+            </div>
+
+            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1rem;align-items:center;">
+              <button id="puzzleFlipBtn" class="btn btn-sm">⟳ Voltear</button>
+              <button id="puzzleAnalyzeBtn" class="btn btn-sm btn-gold">🔍 Analizar con Stockfish</button>
+              <a id="puzzleLichessLink" href="https://lichess.org/training" target="_blank" class="btn btn-sm" style="text-decoration:none;">🌐 Abrir en Lichess</a>
+            </div>
+
+            <div id="puzzleAnalysis" style="display:none;margin-top:1rem;">
+              <div class="analysis-panel">
+                <h4>🔍 Análisis Stockfish (vía Lichess)</h4>
+                <p id="puzzleAnalysisStatus"></p>
+                <div id="puzzleEngineLines"></div>
+              </div>
+            </div>
+
+            <p style="font-size:0.8rem;color:#666;margin-top:0.8rem;">
+              Puzzle provisto por <a href="https://lichess.org" target="_blank" style="color:var(--gold-color);">Lichess.org</a> — código abierto.
+            </p>
           </div>
         </section>
 
@@ -173,71 +197,40 @@
           </div>
         </section>
 
-        <!-- SECTION: FUTURE LICHESS INTEGRATION - MAIN PLACEHOLDER -->
+        <!-- Centro de Entrenamiento Lichess — ACTIVO -->
         <section id="lichess-integration" style="margin-top: 3rem;">
-          <div class="placeholder" style="padding: 3rem; border: 3px dashed #ffd700;">
-            <h2 style="color: #ffd700; margin-top: 0;">🌟 Centro de Entrenamiento Lichess (Próximamente)</h2>
-            
-            <p style="font-size: 1.1rem; line-height: 1.8;">
-              <strong>Próximamente en Phase 2:</strong> Integración completa con <strong>Lichess.org</strong>, la plataforma de ajedrez más grande del mundo.
-            </p>
-            
-            <div style="background-color: #1a1a2e; padding: 1.5rem; border-radius: 5px; margin: 1.5rem 0;">
-              <h4 style="color: #ffd700;">✅ Características que llegarán:</h4>
-              <ul style="margin-left: 2rem; color: #d4d4d4;">
-                <li>Tablero interactivo de Lichess embebido</li>
-                <li>Acceso a puzzles de Lichess con puntuación del usuario</li>
-                <li>Integración con partidas en vivo</li>
-                <li>Análisis automático de tus partidas</li>
-                <li>Estadísticas personalizadas de progreso</li>
-                <li>Comunidad integrada para jugar contra otros estudiantes</li>
-              </ul>
+          <div class="board-section">
+            <h2 style="color:var(--gold-color);margin-top:0;border:none;padding:0;">🌟 Centro de Entrenamiento Lichess</h2>
+            <p>Accede directamente a las herramientas de <strong>Lichess.org</strong> — la plataforma de ajedrez de código abierto más grande del mundo.</p>
+
+            <div class="card-grid" style="margin-top:1.5rem;">
+              <div class="card">
+                <h3>🧩 Puzzles Tácticos</h3>
+                <p>Miles de puzzles ordenados por dificultad y tema. Entrena tu visión táctica con retroalimentación instantánea.</p>
+                <a href="https://lichess.org/training" target="_blank" class="btn">Entrenar Táctica →</a>
+              </div>
+              <div class="card">
+                <h3>🤖 Jugar vs Stockfish</h3>
+                <p>Juega partidas contra el motor Stockfish en cualquier nivel. Analiza tus jugadas al terminar.</p>
+                <a href="https://lichess.org/play/ai" target="_blank" class="btn">Jugar vs IA →</a>
+              </div>
+              <div class="card">
+                <h3>🔍 Tablero de Análisis</h3>
+                <p>Analiza cualquier posición con Stockfish. Carga tu FEN o PGN y estudia variantes en profundidad.</p>
+                <a href="https://lichess.org/analysis" target="_blank" class="btn">Abrir Análisis →</a>
+              </div>
             </div>
 
-            <p style="color: #e94560; font-weight: bold;">
-              Mantente atento a las actualizaciones. Pronto podrás entrenar directamente sin salir de la Academia.
-            </p>
-
-            <!-- DETAILED HTML COMMENTS FOR PHASE 2 DEVELOPMENT -->
-            <!-- 
-            PHASE 2 IMPLEMENTATION GUIDE - LICHESS INTEGRATION:
-            
-            1. PUZZLE INTEGRATION:
-               - Endpoint: GET https://lichess.org/api/puzzle/daily (daily puzzle)
-               - Alternative: GET https://lichess.org/api/puzzle/search?difficulty=2&size=10 (custom search)
-               - Embed in iframe: <iframe src="https://lichess.org/embed/puzzle/[puzzleId]"></iframe>
-               - Store user puzzle rating locally in localStorage
-            
-            2. LIVE GAMES INTEGRATION:
-               - Use Lichess OAuth for authentication (optional)
-               - Fetch user games: GET https://lichess.org/api/games/user/{username}
-               - Display live games with status
-            
-            3. ANALYSIS INTEGRATION:
-               - POST analysis requests to Lichess API
-               - Display computer analysis alongside user's moves
-               - Integration with Chess.js for PGN parsing
-            
-            4. COMMUNITY FEATURES:
-               - Create academy team on Lichess
-               - Integrate team tournament results
-               - Show leaderboard of academy members
-            
-            5. TECH STACK FOR PHASE 2:
-               - Chess.js library for game logic
-               - Lichess.js SDK for API calls
-               - localStorage for user preferences and statistics
-               - Backend API (Node.js/Express) for storing academy-specific data
-            
-            6. SECURITY:
-               - Use CORS proxy if needed (lichess.org has CORS headers)
-               - Store API tokens securely (backend only, not in frontend)
-               - Validate user input for puzzle searches
-            -->
+            <div style="background:var(--primary-color);padding:1.2rem;border-radius:8px;border-left:4px solid var(--gold-color);margin-top:1.5rem;font-size:0.9rem;color:#bbb;">
+              <strong style="color:var(--gold-color);">💡 ¿Sabías que…?</strong> Lichess es 100% código abierto y gratuito.
+              Todo su código, incluyendo el motor Stockfish integrado, está disponible en
+              <a href="https://github.com/lichess-org" target="_blank" style="color:var(--gold-color);">GitHub</a>.
+              Usamos su API para los puzzles y análisis directamente en esta Academia.
+            </div>
           </div>
         </section>
 
-        <!-- Progress Tracking Placeholder -->
+        <!-- Progress Tracking -->
         <section style="margin-top: 2rem;">
           <h3 style="color: #ffd700;">📈 Tu Progreso</h3>
           <p>
@@ -261,6 +254,136 @@
     </div>
   </footer>
 
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.3/chess.min.js"></script>
   <script src="assets/js/main.js"></script>
+  <script>
+    /* =====================================================
+       Puzzle del Día — Lichess API + chessboard.js
+    ===================================================== */
+    var puzzleBoard = null;
+    var puzzleGame  = new Chess();
+    var puzzleId    = null;
+
+    function initPuzzleBoard(fen, orientation) {
+      puzzleGame = new Chess(fen);
+      var cfg = {
+        draggable: false,
+        position: fen,
+        orientation: orientation || 'white',
+        pieceTheme: 'https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/img/chesspieces/wikipedia/{piece}.png'
+      };
+      if (puzzleBoard) puzzleBoard.destroy();
+      puzzleBoard = Chessboard('puzzleBoard', cfg);
+      $(window).resize(puzzleBoard.resize);
+    }
+
+    function setPuzzleEvalBar(cp, mate) {
+      var whitePct = 50;
+      var topText = '', botText = '';
+      if (mate !== null && mate !== undefined) {
+        whitePct = mate > 0 ? 95 : 5;
+        if (mate > 0) { botText = '#' + mate; } else { topText = '#' + Math.abs(mate); }
+      } else if (cp !== null && cp !== undefined) {
+        var capped = Math.max(-600, Math.min(600, cp));
+        whitePct = 50 + (capped / 600) * 45;
+        var v = (cp / 100).toFixed(1);
+        if (cp >= 0) { botText = '+' + v; } else { topText = v; }
+      }
+      $('#pEvalBlack').css('height', (100 - whitePct) + '%');
+      $('#pEvalWhite').css('height', whitePct + '%');
+      $('#pEvalTop').text(topText);
+      $('#pEvalBottom').text(botText);
+    }
+
+    function uciLineSan(fen, uciString, maxMoves) {
+      var tmp = new Chess(fen), parts = uciString.split(' ').slice(0, maxMoves), san = [];
+      for (var i = 0; i < parts.length; i++) {
+        var u = parts[i];
+        var m = tmp.move({ from: u.slice(0,2), to: u.slice(2,4), promotion: u.length === 5 ? u[4] : undefined });
+        if (!m) break;
+        san.push(m.san);
+      }
+      return san.join(' ');
+    }
+
+    function loadDailyPuzzle() {
+      fetch('https://lichess.org/api/puzzle/daily')
+        .then(function(r) { if (!r.ok) throw new Error('Failed to fetch daily puzzle: ' + r.status); return r.json(); })
+        .then(function(data) {
+          var p = data.puzzle;
+          puzzleId = p.id;
+
+          // Determine puzzle orientation from whose turn it is in the puzzle FEN
+          var tempGame = new Chess(p.initialFen);
+          // Play the last move of the game to get the puzzle start position
+          // Actually p.initialFen is already the puzzle starting position
+          var turn = tempGame.turn(); // 'w' or 'b'
+          var orientation = turn === 'w' ? 'white' : 'black';
+
+          initPuzzleBoard(p.initialFen, orientation);
+
+          var themes = (p.themes || []).slice(0, 4).join(', ');
+          var turnText = turn === 'w' ? '⬜ Juegan Blancas' : '⬛ Juegan Negras';
+          $('#puzzleMeta').html(
+            '<strong style="color:var(--gold-color);">' + turnText + '</strong>' +
+            ' &nbsp;·&nbsp; Rating: ' + p.rating +
+            (themes ? ' &nbsp;·&nbsp; Temas: ' + themes : '')
+          );
+
+          $('#puzzleLichessLink').attr('href', 'https://lichess.org/training/' + p.id);
+          $('#puzzleAnalyzeBtn').data('fen', p.initialFen);
+        })
+        .catch(function() {
+          $('#puzzleMeta').text('No se pudo cargar el puzzle del día. Visita lichess.org/training.');
+          initPuzzleBoard('start', 'white');
+        });
+    }
+
+    $('#puzzleFlipBtn').on('click', function() {
+      if (puzzleBoard) puzzleBoard.flip();
+    });
+
+    $('#puzzleAnalyzeBtn').on('click', function() {
+      var fen = $(this).data('fen');
+      if (!fen) return;
+      $('#puzzleAnalysis').show();
+      $('#puzzleAnalysisStatus').html('⏳ Consultando Stockfish…');
+      $('#puzzleEngineLines').html('');
+      fetch('https://lichess.org/api/cloud-eval?fen=' + encodeURIComponent(fen) + '&multiPv=3')
+        .then(function(r) { if (!r.ok) throw new Error('Failed to fetch Stockfish analysis: ' + r.status); return r.json(); })
+        .then(function(data) {
+          var pvs = data.pvs || [];
+          if (!pvs.length) { $('#puzzleAnalysisStatus').text('Sin datos.'); return; }
+          var top = pvs[0];
+          var evalStr = top.mate !== undefined
+            ? (top.mate > 0 ? '#' + top.mate : '-#' + Math.abs(top.mate))
+            : (top.cp >= 0 ? '+' : '') + (top.cp / 100).toFixed(2);
+          $('#puzzleAnalysisStatus').html(
+            'Evaluación: <strong style="color:var(--gold-color)">' + evalStr + '</strong> · Prof. ' + data.depth
+          );
+          setPuzzleEvalBar(top.cp, top.mate);
+          var html = '';
+          pvs.forEach(function(pv) {
+            var eStr = pv.mate !== undefined ? (pv.mate > 0 ? '#' + pv.mate : '-#' + Math.abs(pv.mate)) : (pv.cp >= 0 ? '+' : '') + (pv.cp / 100).toFixed(2);
+            var san  = pv.moves ? uciLineSan(fen, pv.moves, 5) : '';
+            html += '<div class="engine-line"><span class="line-eval">' + eStr + '</span><span class="line-moves">' + san + (pv.moves && pv.moves.split(' ').length > 5 ? '…' : '') + '</span></div>';
+          });
+          $('#puzzleEngineLines').html(html);
+        })
+        .catch(function() {
+          $('#puzzleAnalysisStatus').html(
+            'No disponible en la nube. <a href="' +
+            'https://lichess.org/analysis/' + encodeURIComponent($('#puzzleAnalyzeBtn').data('fen') || '') +
+            '" target="_blank" style="color:var(--gold-color)">Abrir en Lichess →</a>'
+          );
+        });
+    });
+
+    $(document).ready(function() {
+      loadDailyPuzzle();
+    });
+  </script>
 </body>
 </html>
